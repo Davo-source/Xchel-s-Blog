@@ -14,13 +14,14 @@ export class Articles extends React.Component {
           title: "Articulo de prueba",
           createdAt: date,
           description: "Descripcion de prueba",
+          id: '1'
 
         },
         {
             title: "Articulo de prueba 2",
             createdAt: date,
             description: "Descripcion de prueba 2",
-  
+            id: '2'
           },
       ],
     };
@@ -29,8 +30,8 @@ export class Articles extends React.Component {
   render() {
     return (
       <div className="article-menu">
-        {this.state.sections.map(({ title, createdAt, description }) => (
-            <Card title={title} createdAt={createdAt} description={description}/>
+        {this.state.sections.map(({ id, title, createdAt, description }) => (
+            <Card key={id} title={title} createdAt={createdAt} description={description}/>
         ))}
       </div>
     );
