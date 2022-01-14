@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Articles } from '../components/articles.component';
+import { Articles } from '../../components/articles/articles.component';
 import './homepage.styles.css'
 
 const HomePage = () => {
