@@ -7,7 +7,7 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navbar.styles.css";
 
 const NavBar = () => {
@@ -18,17 +18,17 @@ const NavBar = () => {
           <Navbar.Brand>
             <Link className="link" to="/">
               <i className="fab fa-mixer fa-lg"></i>
-              chel's Blog
+              Xchel's Blog
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Toggle aria-controls ="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav navbarScroll>
               <Nav.Link as={Link} to="/posts">
                 Posts
               </Nav.Link>
               <Nav.Link as={Link} className="myButton" to="/newArticle">
-                Make a post
+                Make a Post
               </Nav.Link>
             </Nav>
 
