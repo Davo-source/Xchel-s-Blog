@@ -18,7 +18,7 @@ const NavBar = () => {
           <Navbar.Brand>
             <Link className="link" to="/">
               <i className="fab fa-mixer fa-lg"></i>
-              chel's Blog
+              chel dev
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
