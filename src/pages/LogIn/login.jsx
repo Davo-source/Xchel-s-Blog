@@ -11,9 +11,9 @@ const Login = () => { //POR AHORA NO USAMOS ACTION Y METHOD:POST, NO HAY SERVIDO
         <h1 className="title-login"> Login</h1>
             <form className="Login-Form"> 
                 <label>Email</label>
-                <input type='text' className="loginInput" placeholder="Correo... "/>
+                <input type='text' name="email" className="loginInput" placeholder=" Email... " required/>
                 <label>Password </label>
-                <input type='password' className="loginInput" placeholder="Contrasenia... "/>
+                <input type='password' name="password" className="loginInput" placeholder=" Password... " required/>
                 <button className="login-button">Login</button>
             </form>
         </div>
