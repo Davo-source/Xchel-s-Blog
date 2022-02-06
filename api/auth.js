@@ -10,7 +10,7 @@ router.post("/XchelAdministrador", async (req,res) =>{
         const password = await xchel.findOne({password: req.body.password})
         !password && res.status(400).json("Datos incorrectos")
 
-
+        
     }catch (error) {
         res.status(500).json(error)
     }

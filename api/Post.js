@@ -10,7 +10,7 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    imagen:{
+    image:{
         type: String,
         required: false
     },
@@ -22,7 +22,11 @@ const PostSchema = new mongoose.Schema({
     uptadedAt: {
         type: Date,
         default: () => Date.now()
-    }
+    },
+    markdown: {
+        type: String,
+        required: true
+      },
 })
 
 module.exports = mongoose.model("Post", PostSchema)
