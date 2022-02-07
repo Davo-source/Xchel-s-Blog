@@ -9,8 +9,11 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./navbar.styles.css";
+import { useSearchParams } from "react-router-dom";
 
 const NavBar = () => {
+  let [searchParams, setSearchParams] = useSearchParams();
+
   return (
     <div>
       <Navbar className="navbar" bg="white" expand="lg">

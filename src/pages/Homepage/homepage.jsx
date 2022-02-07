@@ -20,9 +20,10 @@ const HomePage = () => {
   return (
 <div className="box">
         {posts.map(
-          ({ id, title, createdAt, desc, image }) => (
+          ({ _id, title, createdAt, desc, image }) => (
             <Card
-              key={id}
+              Id={_id}
+              key={_id}
               title={title}
               createdAt={createdAt}
               desc={desc}
