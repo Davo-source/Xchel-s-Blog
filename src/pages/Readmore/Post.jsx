@@ -19,8 +19,8 @@ const Post = () => {
       },[PostId])
 
     return(
-        <div>
-            <h1>{post.title}</h1>
+        <div className="">
+            {post.title}
         </div>
     )
 }
