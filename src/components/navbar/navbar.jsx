@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Container,
@@ -10,10 +10,14 @@ import {
 import { Link } from "react-router-dom";
 import "./navbar.styles.css";
 
-const NavBar = () => {
+function NavBar() {
+  const [hide, setHideState] = useState(1);
+
+  let classHide = hide ? "hide" : "navbar";
+
   return (
     <div>
-      <Navbar className="navbar" bg="white" expand="lg">
+      <Navbar className={classHide} bg="white" expand="lg">
         <Container>
           <Navbar.Brand>
             <Link className="link" to="/">
@@ -46,6 +50,6 @@ const NavBar = () => {
       </Navbar>
     </div>
   );
-};
+}
 
 export default NavBar;
