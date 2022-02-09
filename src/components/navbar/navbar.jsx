@@ -9,11 +9,10 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./navbar.styles.css";
+import { useSearchParams } from "react-router-dom";
 
-function NavBar() {
-  const [hide, setHideState] = useState(1);
-
-  let classHide = hide ? "hide" : "navbar";
+const NavBar = () => {
+  let [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <div>
@@ -50,6 +49,6 @@ function NavBar() {
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavBar;
