@@ -12,7 +12,8 @@ import "./navbar.styles.css";
 
 
 const NavBar = () => {
-
+  const [hide, setHideState] = useState(0);
+  let classHide = hide ? "hide" : "navbar";
   return (
     <div>
       <Navbar className={classHide} bg="white" expand="lg">
