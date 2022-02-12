@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Container,
@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <Navbar className="navbar" bg="white" expand="lg">
+      <Navbar className={classHide} bg="white" expand="lg">
         <Container>
           <Navbar.Brand>
             <Link className="link" to="/">
