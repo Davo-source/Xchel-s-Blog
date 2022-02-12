@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import "./Post.styles.css"
 
 const Post = () => {
 
@@ -19,9 +20,17 @@ const Post = () => {
       },[PostId])
 
     return(
-        <div className="">
-            {post.title}
+      <div className="All">
+                <div className="Container">
+            <div className="Image-container">
+            <img src={post.image} className="Image" alt="imagen" />
+            </div>
+            <div className="title">
+              <h1>{post.title}</h1>
+              <p>{post.desc}</p>
+            </div>
         </div>
+      </div>
     )
 }
 export default Post;
