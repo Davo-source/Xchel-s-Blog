@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./login.styles.css";
-import NavBar from "../../components/navbar/navbar";
+
 
 const Login = () => {
   //POR AHORA NO USAMOS ACTION Y METHOD:POST, NO HAY SERVIDOR

@@ -9,11 +9,11 @@ import {
 } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import "./navbar.styles.css";
-import { useSearchParams } from "react-router-dom";
+
 
 const NavBar = () => {
-  let [searchParams, setSearchParams] = useSearchParams();
-
+  const [hide, setHideState] = useState(0);
+  let classHide = hide ? "hide" : "navbar";
   return (
     <div>
       <Navbar className="navbar" bg="white" expand="lg">
