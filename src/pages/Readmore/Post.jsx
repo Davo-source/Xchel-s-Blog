@@ -18,16 +18,6 @@ const Post = () => {
     fetchPosts();
   }, [PostId]);
 
-  const [post, setPost] = useState({});
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const resp = await axios.get("/posts/" + PostId);
-      setPost(resp.data);
-    };
-    fetchPosts();
-  }, [PostId]);
-
   return (
     <div className="All">
       <div className="Container">
