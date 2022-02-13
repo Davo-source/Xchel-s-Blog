@@ -7,7 +7,7 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./navbar.styles.css";
 import { useSearchParams } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <Navbar className={classHide} bg="white" expand="lg">
+      <Navbar className="navbar" bg="white" expand="lg">
         <Container>
           <Navbar.Brand>
             <Link className="link" to="/">

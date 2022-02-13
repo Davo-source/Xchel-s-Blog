@@ -1,25 +1,26 @@
-const mongoose = require('mongoose');
-const express = require('express');
-const prueba = require('./Xchel')
-const prueba2 = require('./Post')
+const mongoose = require("mongoose");
+const express = require("express");
+const prueba = require("./Xchel");
+const prueba2 = require("./Post");
 const app = express();
 const authRoute = require("./auth");
-const postRoute = require("./crud")
+const postRoute = require("./crud");
 
 app.use(express.json());
-main()
+main();
 
 async function main() {
-  await mongoose.connect('mongodb+srv://Doramox:DavidRules156@cluster0.spcn1.mongodb.net/blog?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(console.log('exito conectando a mongodb Atlas'))
-  .catch(error=>console.log(error));
-  
+  await mongoose
+    .connect(
+      "mongodb+srv://Doramox:DavidRules156@cluster0.spcn1.mongodb.net/blog?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    )
+    .then(console.log("exito conectando a mongodb Atlas"))
+    .catch((error) => console.log(error));
 }
-
-
 
 /*creando cuenta de prueba, correr solo una vez o ESTAS DESPEDIDO
 run()
@@ -37,11 +38,11 @@ async function run() {
 
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
-app.listen("5000", () =>{
-    console.log("backend escuchando a puerto 5000");
-})
+app.listen("5000", () => {
+  console.log("backend escuchando a puerto 5000");
+});
 
 /*app.get("/", async (req,res) =>{
   const articulo1 =  await prueba2.find()
