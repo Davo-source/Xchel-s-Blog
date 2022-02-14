@@ -12,11 +12,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  //const emailRef = useRef();
+  //const passwordRef = useRef();
 
   const [login, setlogin] = useContext(ContextGlobal);
-  
+
+
   const handleSumbit = async (event) => {
     event.preventDefault();
      
@@ -24,17 +25,19 @@ const Login = () => {
       const res = await axios.post("/auth/XchelAdministrador" ,{
           email: email,
           password: password,
-        
+
       });
-      console.log(res)
+      console.log(res.data);
+      setlogin(true)
+      console.log(login)
     }
     catch(err){
       console.log(err)
     }
-    setlogin(true)
-    console.log(login)
-    
-  }
+    setlogin(true);
+    console.log(login);
+   
+  } 
 
   return (
     <div className="LoginForm">
@@ -49,7 +52,7 @@ const Login = () => {
             placeholder=" Email... " 
             required
             onChange={(e) => setEmail(e.target.value)}
-            ref={emailRef}
+            //ref={emailRef}
           />
        
           <label>Password </label>
@@ -60,7 +63,7 @@ const Login = () => {
             placeholder=" Password... "
             required
             onChange={(event) => setPassword(event.target.value)}
-            ref={passwordRef}
+            //ref={passwordRef}
           />
           
           <button type="submit" className="login-button">Login</button>
