@@ -9,6 +9,9 @@ import "./login.styles.css";
 const Login = () => {
   //POR AHORA NO USAMOS ACTION Y METHOD:POST, NO HAY SERVIDOR
   //Todo hijo (h1) debe estar dentro de un elemento padre
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -19,8 +22,9 @@ const Login = () => {
      
     try{
       const res = await axios.post("/auth/XchelAdministrador" ,{
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
+          email: email,
+          password: password,
+        
       });
       console.log(res)
     }
@@ -44,7 +48,7 @@ const Login = () => {
             className="loginInput"
             placeholder=" Email... " 
             required
-            //onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             ref={emailRef}
           />
        
@@ -55,7 +59,7 @@ const Login = () => {
             className="loginInput"
             placeholder=" Password... "
             required
-            //onChange={(event) => setPassword(event.target.value)}
+            onChange={(event) => setPassword(event.target.value)}
             ref={passwordRef}
           />
           
