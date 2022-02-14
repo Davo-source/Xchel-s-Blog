@@ -4,12 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
-import UserCotext from "./Estados/Contexto";
+import {UserContext} from "./Estados/Contexto"
+
 ReactDOM.render(
   <React.StrictMode>
-    <UserCotext>
+    <UserContext>
       <App />
-    </UserCotext>
+    </UserContext>
   </React.StrictMode>,
   document.getElementById("root")
 );
