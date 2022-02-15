@@ -1,9 +1,9 @@
 import React from "react";
 import { createContext, useState } from "react";
 
-const UserContext = (props) => {
-  const ContextGlobal = createContext();
+export const ContextGlobal = createContext();
 
+export const UserContext = (props) => {
   const [state, setState] = useState(false);
 
   return (
@@ -12,5 +12,3 @@ const UserContext = (props) => {
     </ContextGlobal.Provider>
   );
 };
-
-export default UserContext;
