@@ -1,7 +1,7 @@
 import React from "react";
 import { createContext, useState } from "react";
 
-const UserCotext = (props) => {
+const UserContext = (props) => {
   const ContextGlobal = createContext();
 
   const [state, setState] = useState(false);
@@ -13,4 +13,4 @@ const UserCotext = (props) => {
   );
 };
 
-export default UserCotext;
+export default UserContext;

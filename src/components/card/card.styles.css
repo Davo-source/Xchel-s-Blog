@@ -1,11 +1,5 @@
-.Card-item {
-  border: 1px solid black;
-  margin: 10px 7.5px 15px;
-}
-
 .img-responsive {
-  border-radius: 25px;
-  min-height: 10rem;
-  min-width: auto;
-  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
 }
