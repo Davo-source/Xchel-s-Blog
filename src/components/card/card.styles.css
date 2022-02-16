@@ -3,3 +3,16 @@
   width: 100%;
   height: auto;
 }
+.headerCard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card:hover .dropdownMenu {
+  display: block;
+}
+
+.dropdownMenu {
+  display: none;
+  align-self: center;
+}

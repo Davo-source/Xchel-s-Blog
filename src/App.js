@@ -6,7 +6,7 @@ import HomePage from "./pages/Homepage/homepage";
 import Login from "./pages/LogIn/login";
 import NewArticle from "./pages/NewArticle/newArticle";
 import Post from "./pages/Readmore/Post";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <BrowserRouter>
