@@ -5,8 +5,7 @@ const xchel = require("./Xchel");
 router.post("/XchelAdministrador", async (req, res) => {
   try {
     const user = await xchel.findOne({ email: req.body.email });
-    const email = JSON.stringify(user.email);
-    !email && res.status(400).json("Datos incorrectos");
+    !JSON.stringify(user) && res.status(400).json("Datos incorrectos");
 
     const Userpassword = (user) ? user.password : false;
     const password = Userpassword === req.body.password;

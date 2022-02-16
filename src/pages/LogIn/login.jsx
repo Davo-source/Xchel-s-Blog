@@ -28,15 +28,11 @@ const Login = () => {
 
       });
       console.log(res.data);
-      setlogin(true)
-      console.log(login)
+      setlogin(true) 
     }
     catch(err){
       console.log(err)
     }
-    setlogin(true);
-    console.log(login);
-   
   } 
 
   return (
@@ -66,7 +62,7 @@ const Login = () => {
             //ref={passwordRef}
           />
           
-          <button type="submit" className="login-button">Login</button>
+          <button type="submit" className="login-button" disabled={login}>Login</button>
         </form>
       </div>
     </div>
