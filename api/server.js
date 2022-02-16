@@ -38,6 +38,7 @@ async function run() {
 
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
+
 app.use(express.urlencoded({ extended: false }));
 
 app.listen("5000", () => {

@@ -4,6 +4,7 @@ import Card from "../../components/card/card.component";
 import "./homepage.styles.css";
 import { useEffect } from "react";
 import axios from "axios";
+import { Carousel } from "react-bootstrap";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -18,8 +19,9 @@ const HomePage = () => {
     return () => {};
   }, []);
   return (
+    
     <div className="box">
-      {posts.map(({ _id, title, createdAt, desc, image }) => (
+{posts.map(({ _id, title, createdAt, desc, image }) => (
         <Card
           Id={_id}
           key={_id}
@@ -29,7 +31,7 @@ const HomePage = () => {
           image={image}
         />
       ))}
-    </div>
+</div>
   );
 };
 export default HomePage;
