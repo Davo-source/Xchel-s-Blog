@@ -65,13 +65,12 @@ router.get("/", async (req, res) => {
 //DELETE POST
 router.delete("/:id", async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
-    try {
-      await post.delete();
-      res.status(200).json("Post has been deleted...");
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    await Post.findByIdAndDelete(req.params.id).then(
+      res.status(200).json("Post has been deleted...")
+    );
+
+    //     await post.delete();
+    //     res.status(200).json("Post has been deleted...");
   } catch (err) {
     res.status(500).json(err);
   }

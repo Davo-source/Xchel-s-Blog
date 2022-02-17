@@ -19,9 +19,8 @@ const HomePage = () => {
     return () => {};
   }, []);
   return (
-    
     <div className="box">
-{posts.map(({ _id, title, createdAt, desc, image }) => (
+      {posts.map(({ _id, title, createdAt, desc, image }) => (
         <Card
           Id={_id}
           key={_id}
@@ -31,7 +30,7 @@ const HomePage = () => {
           image={image}
         />
       ))}
-</div>
+    </div>
   );
 };
 export default HomePage;

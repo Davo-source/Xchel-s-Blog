@@ -2,15 +2,70 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./card.styles.css";
 import { useState } from "react";
+import axios from "axios";
+import Modal from "react-bootstrap";
+
 const Card = (post) => {
   const [dropdown, setDropdown] = useState(false);
+  const [postId, setPostId] = useState(post.Id);
+
   const toggle = () => setDropdown(!dropdown);
+
+  const handleDelete = async () => {
+    try {
+      const res = await axios.delete("/posts/" + postId, {});
+      window.location.replace("/");
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleEdit = () => {};
 
   return (
     <div
       className="card mx-auto border-0 border-bottom border-2 mt-3 p-3 mr-4"
       style={{ maxWidth: 740 + "px" }}
     >
+      <div
+        className="modal fade"
+        id={`exampleModalCenter-${postId}`}
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="false"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLongTitle">
+                Are you sure?
+              </h5>
+            </div>
+            <div className="modal-body">
+              This will delete all the post content and no undo can be done
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                onClick={handleDelete}
+                type="button"
+                className="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="row">
         <div className="col-8  ">
           <div className="card-body">
@@ -21,12 +76,21 @@ const Card = (post) => {
                   <i className=" fa-solid fa-ellipsis fa-lg"></i>
                 </button>
                 <div className={`dropdown-menu ${dropdown ? "show" : ""}`}>
-                  <a className="dropdown-item">
+                  <button
+                    onClick={handleEdit}
+                    type="button"
+                    className="dropdown-item"
+                  >
                     <i className="fa-solid fa-pen-to-square"></i> Edit
-                  </a>
-                  <a className="dropdown-item">
+                  </button>
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target={`#exampleModalCenter-${postId}`}
+                    type="button"
+                    className="dropdown-item"
+                  >
                     <i className="fa-solid fa-trash-can"></i> Delete
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
