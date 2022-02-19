@@ -14,6 +14,7 @@ const HomePage = () => {
       const resp = await axios.get("/posts");
       setPosts(resp.data);
     };
+
     fetchPosts();
 
     return () => {};

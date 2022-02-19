@@ -16,7 +16,7 @@ router.post("/newArticle", async (req, res) => {
     res.status(200).json(savedPost);
     // res.status(200).json(savedPost).json(saved);
   } catch (error) {
-    // res.status(500).json(error);
+    res.status(500).json(error);
   }
   //Si el try es exitoso, HACER EL CLASS STYLING Y MANDAR A HOMEPAGE
 });
@@ -27,14 +27,12 @@ router.put("/:id", async (req, res) => {
     const postUpdated = await Post.findByIdAndUpdate(
       req.params.id,
       {
-        $set: {
-          title: req.body.title,
-          desc: req.body.desc,
-          markdown: req.body.markdown,
-          image: req.body.image,
-        },
+        title: req.body.title,
+        desc: req.body.desc,
+        markdown: req.body.markdown,
+        image: req.body.image,
       },
-      { new: true } //para regresar uptdated
+      { new: true } //para regresar updated
     );
     res.status(200).json(postUpdated);
   } catch (err) {

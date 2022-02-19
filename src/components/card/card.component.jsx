@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 import "./card.styles.css";
 import { useState } from "react";
 import axios from "axios";
-import Modal from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ContextGlobal } from "../../Estados/Contexto";
 
 const Card = (post) => {
   const [dropdown, setDropdown] = useState(false);
   const [postId, setPostId] = useState(post.Id);
+  const [login, setlogin] = useContext(ContextGlobal);
+
+  let navigate = useNavigate();
 
   const toggle = () => setDropdown(!dropdown);
 
@@ -21,7 +26,9 @@ const Card = (post) => {
     }
   };
 
-  const handleEdit = () => {};
+  const handleEdit = () => {
+    navigate(`/editArticle/${postId}`);
+  };
 
   return (
     <div
@@ -71,7 +78,7 @@ const Card = (post) => {
           <div className="card-body">
             <div className="headerCard">
               <h5 className="card-title">{post.title}</h5>
-              <div className="dropdownMenu">
+              <div className={`dropdownMenu ${login ? "" : "hide"}`}>
                 <button className="btn btn-sm" onClick={toggle}>
                   <i className=" fa-solid fa-ellipsis fa-lg"></i>
                 </button>

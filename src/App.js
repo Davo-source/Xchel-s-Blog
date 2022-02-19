@@ -8,7 +8,7 @@ import NewArticle from "./pages/NewArticle/newArticle";
 import Post from "./pages/Readmore/Post";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ContextGlobal } from "./Estados/Contexto";
-
+import EditArticle from "./pages/EditArticle/EditArticle";
 function App() {
   const [login, setlogin] = useContext(ContextGlobal);
 
@@ -25,6 +25,12 @@ function App() {
           path="/newArticle"
           element={login ? <NewArticle /> : <HomePage />}
         />
+
+        <Route
+          path="/editArticle/:id"
+          element={login ? <EditArticle /> : <HomePage />}
+        />
+
         <Route path="/posts" element={<HomePage />} />
         <Route path="/post/:id" element={<Post />} />
       </Routes>

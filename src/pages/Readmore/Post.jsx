@@ -15,6 +15,7 @@ const Post = () => {
       const resp = await axios.get("/posts/" + PostId);
       setPost(resp.data);
     };
+
     fetchPosts();
   }, [PostId]);
 
