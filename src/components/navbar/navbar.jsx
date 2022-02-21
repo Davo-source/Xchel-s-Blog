@@ -21,7 +21,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <Navbar className="navbar" bg="white" expand="lg">
+      <Navbar className="navbar" bg="light" expand="lg">
         <Container>
           <Navbar.Brand>
             <Link className="link" to="/">
@@ -32,7 +32,7 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav navbarScroll>
-              <Nav.Link as={Link} to="/posts">
+              <Nav.Link as={Link} to="/posts" >
                 Posts
               </Nav.Link>
               <Nav.Link as={Link} className={`myButton-${classHide}`} to="/newArticle">

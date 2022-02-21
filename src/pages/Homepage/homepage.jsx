@@ -19,6 +19,7 @@ const HomePage = () => {
 
     return () => {};
   }, []);
+ 
   return (
     <div className="box">
       {posts.map(({ _id, title, createdAt, desc, image }) => (

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ContextGlobal } from "../../Estados/Contexto";
 
+
 const Card = (post) => {
   const [dropdown, setDropdown] = useState(false);
   const [postId, setPostId] = useState(post.Id);
@@ -31,7 +32,7 @@ const Card = (post) => {
   };
 
   return (
-    <div
+      <div
       className="card mx-auto border-0 border-bottom border-2 mt-3 p-3 mr-4"
       style={{ maxWidth: 740 + "px" }}
     >
@@ -74,7 +75,10 @@ const Card = (post) => {
       </div>
 
       <div className="row">
-        <div className="col-8  ">
+      <div className=" col-lg-4 col-12 align-self-center">
+          <img src={post.image} className=" img-responsive" alt="..." />
+        </div>
+        <div className="col-md-8">
           <div className="card-body">
             <div className="headerCard">
               <h5 className="card-title">{post.title}</h5>
@@ -102,7 +106,7 @@ const Card = (post) => {
               </div>
             </div>
 
-            <p className="card-text">{post.desc}</p>
+            <p className="card-text align-selg-center">{post.desc}</p>
             <p className="card-text">
               <small className="text-muted">
                 {new Date(post.createdAt).toDateString()}
@@ -114,9 +118,6 @@ const Card = (post) => {
               </button>
             </Link>
           </div>
-        </div>
-        <div className=" col-4 align-self-center">
-          <img src={post.image} className=" img-responsive" alt="..." />
         </div>
       </div>
     </div>
