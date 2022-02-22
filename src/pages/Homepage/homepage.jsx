@@ -5,23 +5,34 @@ import "./homepage.styles.css";
 import { useEffect } from "react";
 import axios from "axios";
 import { Carousel } from "react-bootstrap";
+import ReactPaginate from "react-paginate";
 
 const HomePage = () => {
-  const [posts, setPosts] = useState([]);
+  const [totalPosts, setTotalPosts] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [currentPostIndex, setCurrentPostIndex] = useState(0);
+  const [isFirstRender, setIsFirstRender] = useState(true);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const resp = await axios.get("/posts");
-      setPosts(resp.data);
-    };
+  const postsPerPage = 6; // establece la cantidad de posts en cada paginacion
 
-    fetchPosts();
+  const fetchPosts = async () => {
+    const resp = await axios.get("/posts");
+    setTotalPosts(resp.data);
+  };
 
-    return () => {};
-  }, []);
-  return (
-    <div className="box">
-      {posts.map(({ _id, title, createdAt, desc, image }) => (
+  const handlePage = (e) => {
+    setCurrentPostIndex(e.selected * postsPerPage); //establecemos el indice del post actual de acuerdo a la paginacion
+  };
+
+  //funcion para desplegar los posts limitados
+  const PostsSlicerDisplayer = () => {
+    const postOnPage = totalPosts.slice(
+      currentPostIndex,
+      currentPostIndex + postsPerPage
+    );
+    return (
+      postOnPage &&
+      postOnPage.map(({ _id, title, createdAt, desc, image }) => (
         <Card
           Id={_id}
           key={_id}
@@ -30,7 +41,34 @@ const HomePage = () => {
           desc={desc}
           image={image}
         />
-      ))}
+      ))
+    );
+  };
+
+  useEffect(() => {
+    if (isFirstRender) {
+      fetchPosts();
+      setIsFirstRender(!isFirstRender);
+    } else {
+      setPageCount(Math.ceil(totalPosts.length / postsPerPage));
+    }
+    return () => {
+      setIsFirstRender(true);
+    };
+  }, [totalPosts]);
+
+  return (
+    <div className="box">
+      <PostsSlicerDisplayer />
+
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePage}
+        pageCount={pageCount}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+      />
     </div>
   );
 };
