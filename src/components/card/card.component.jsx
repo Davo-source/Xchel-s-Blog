@@ -10,8 +10,8 @@ import { ContextGlobal } from "../../Estados/Contexto";
 
 const Card = (post) => {
   const [dropdown, setDropdown] = useState(false);
-  const [postId, setPostId] = useState(post.Id);
-  const [login, setlogin] = useContext(ContextGlobal);
+  const [postId] = useState(post.Id);
+  const [login] = useContext(ContextGlobal);
 
   let navigate = useNavigate();
 
@@ -106,7 +106,7 @@ const Card = (post) => {
               </div>
             </div>
 
-            <p className="card-text align-selg-center">{post.desc}</p>
+            <p className="card-text align-self-center">{post.desc}</p>
             <p className="card-text">
               <small className="text-muted">
                 {new Date(post.createdAt).toDateString()}
