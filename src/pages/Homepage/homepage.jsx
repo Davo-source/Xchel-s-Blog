@@ -31,7 +31,28 @@ const HomePage = () => {
       currentPostIndex,
       currentPostIndex + postsPerPage
     );
-    return (
+    const temp = postOnPage.slice(0,3);
+    return [
+      postOnPage && 
+      (currentPostIndex===1) &&
+      temp.map(({title, desc, image}) => (
+        <Carousel>
+            <Carousel.Item>
+            <img
+            className="image-resize"
+            src={image}
+          alt="Third slide"
+          />
+
+           <Carousel.Caption>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </Carousel.Caption>
+            </Carousel.Item>
+          )
+        </Carousel>
+      )),
+
       postOnPage &&
       postOnPage.map(({ _id, title, createdAt, desc, image }) => (
         <Card
@@ -43,7 +64,7 @@ const HomePage = () => {
           image={image}
         />
       ))
-    );
+      ];
   };
 
   useEffect(() => {
@@ -58,24 +79,11 @@ const HomePage = () => {
     };
   }, [totalPosts]);
 
+  const [carrusel, postDisplay] = PostsSlicerDisplayer();
+
   return (
     <div className="box">
-    <Carousel>
-    {temp.map(({_id, title, desc, image}) => (
-      <Carousel.Item>
-      <img
-      className="d-block w-100"
-        src={image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-      <h3>{title}</h3>
-      <p>{desc}</p>
-      </Carousel.Caption>
-    </Carousel.Item>
 
-    ))}
-    </Carousel>
       <PostsSlicerDisplayer />
 
       <ReactPaginate

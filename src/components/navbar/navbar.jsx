@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import {
   Button,
   Container,
@@ -7,7 +7,7 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ContextGlobal } from "../../Estados/Contexto";
 import "./navbar.styles.css";
 

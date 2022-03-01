@@ -76,7 +76,7 @@ const Card = (post) => {
 
       <div className="row">
       <div className=" col-lg-4 col-12 align-self-center">
-          <img src={post.image} className=" img-responsive" alt="..." />
+          <img src={post.image} className=" img-responsive image-resize" alt="..." />
         </div>
         <div className="col-md-8">
           <div className="card-body">

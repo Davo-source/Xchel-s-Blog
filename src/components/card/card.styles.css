@@ -1,7 +1,9 @@
 .img-responsive {
   border-radius: 5px;
-  width: 100%;
-  height: auto;
+  width: 250px !important;
+  height: 150px !important;
+  object-fit: cover;
+  object-position: center center;
 }
 .headerCard {
   display: flex;
@@ -16,4 +18,3 @@
   display: none;
   align-self: start;
 }
-

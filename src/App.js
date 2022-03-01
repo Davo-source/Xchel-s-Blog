@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ContextGlobal } from "./Estados/Contexto";
 import EditArticle from "./pages/EditArticle/EditArticle";
 function App() {
-  const [login, setlogin] = useContext(ContextGlobal);
+  const [login] = useContext(ContextGlobal);
 
   return (
     <BrowserRouter>
