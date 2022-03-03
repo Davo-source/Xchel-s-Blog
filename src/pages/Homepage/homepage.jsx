@@ -25,33 +25,16 @@ const HomePage = () => {
     setCurrentPostIndex(e.selected * postsPerPage); //establecemos el indice del post actual de acuerdo a la paginacion
   };
 
+  const postOnPage = totalPosts.slice(
+    currentPostIndex,
+    currentPostIndex + postsPerPage
+  );
+  const temp = postOnPage.slice(0,3);
+
   //funcion para desplegar los posts limitados
   const PostsSlicerDisplayer = () => {
-    const postOnPage = totalPosts.slice(
-      currentPostIndex,
-      currentPostIndex + postsPerPage
-    );
-    const temp = postOnPage.slice(0,3);
-    return [
-      postOnPage && 
-      (currentPostIndex===1) &&
-      temp.map(({title, desc, image}) => (
-        <Carousel>
-            <Carousel.Item>
-            <img
-            className="image-resize"
-            src={image}
-          alt="Third slide"
-          />
 
-           <Carousel.Caption>
-            <h3>{title}</h3>
-            <p>{desc}</p>
-          </Carousel.Caption>
-            </Carousel.Item>
-          )
-        </Carousel>
-      )),
+    return (
 
       postOnPage &&
       postOnPage.map(({ _id, title, createdAt, desc, image }) => (
@@ -64,8 +47,34 @@ const HomePage = () => {
           image={image}
         />
       ))
-      ];
+    );
   };
+
+  const PostCarruselFirstPage = () =>{
+    return(
+      postOnPage && 
+      (currentPostIndex===0) &&
+      <Carousel variant = "dark">{
+      temp.map(({title, desc, image}) => (
+        
+            <Carousel.Item>
+            <img
+            className="image-resize"
+            src={image}
+          alt="slide show"
+          />
+
+           <Carousel.Caption>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </Carousel.Caption>
+            </Carousel.Item>
+          )
+        
+      )}
+      </Carousel>
+    );
+  }
 
   useEffect(() => {
     if (isFirstRender) {
@@ -79,10 +88,11 @@ const HomePage = () => {
     };
   }, [totalPosts]);
 
-  const [carrusel, postDisplay] = PostsSlicerDisplayer();
+
 
   return (
     <div className="box">
+      <PostCarruselFirstPage />
 
       <PostsSlicerDisplayer />
 
