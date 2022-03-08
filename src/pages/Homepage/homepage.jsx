@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Carousel } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
+import { Link } from "react-router-dom";
 
 
 const HomePage = () => {
@@ -55,17 +56,19 @@ const HomePage = () => {
       postOnPage && 
       (currentPostIndex===0) &&
       <Carousel variant = "dark">{
-      temp.map(({title, desc, image}) => (
-        
+      temp.map(({title, desc, image, _id}) => (
             <Carousel.Item>
+              
             <img
             className="image-resize"
             src={image}
           alt="slide show"
           />
-
+          
            <Carousel.Caption>
-            <h3>{title}</h3>
+           <Link to={`/post/${_id}` } style={{ textDecoration: 'none' }}>
+           <h3 className="title-card">{title}</h3>
+          </Link>
             <p>{desc}</p>
           </Carousel.Caption>
             </Carousel.Item>

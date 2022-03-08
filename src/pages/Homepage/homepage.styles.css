@@ -13,6 +13,7 @@
 }*/
 
 .image-resize {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   border-radius: 5px;
@@ -20,11 +21,37 @@
   height: calc(100vh - 200px) !important;
   object-fit: cover;
   object-position: center center;
+  opacity: 15%;
+}
+.btn-warning{
+  position: absolute;
+  left: 75%;
+  top: 87%;
+  color: rgb(255, 254, 254) !important;
+  font: bolder;
 }
 .carousel-item{
+  position: relative;
   display: flex;
   margin-left: 10%;
   justify-content: center;
   width: 80% !important;
   height: calc(100vh - 200px);
+}
+
+.title-card{
+  color: black;
+  font: bold;
+}
+.title-card:hover{
+  animation: scaleTitle 3.5s forwards;
+}
+
+@keyframes scaleTitle{
+  100%{
+    color: rgba(13, 3, 102, 0.9);
+    font: bold;
+    transform: scale(1.5);
+    left: 10px;
+}
 }
