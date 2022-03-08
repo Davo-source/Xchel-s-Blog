@@ -1,6 +1,10 @@
 .box {
-  margin: 0;
-  margin-top: 0;
+  margin: 15vw;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  column-gap: 20px;
+  row-gap: 15px;
 }
 /*.slide-img{
   max-height: min-content;

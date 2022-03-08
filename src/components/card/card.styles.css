@@ -1,7 +1,7 @@
 .img-responsive {
   border-radius: 5px;
-  width: 250px !important;
-  height: 150px !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   object-position: center center;
 }
@@ -10,11 +10,37 @@
   justify-content: space-between;
 }
 
-.card:hover .dropdownMenu {
+.content:hover .dropdownMenu {
   display: block;
 }
 
 .dropdownMenu {
   display: none;
   align-self: start;
+}
+.outside{
+  margin: 5px;
+  border: 0.5px solid;
+  border-radius: 2px;
+}
+.image-border{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 10px;
+  height: 50vh;
+}
+.content{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.card-text{
+  text-align: left;
 }

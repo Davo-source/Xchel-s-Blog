@@ -32,10 +32,7 @@ const Card = (post) => {
   };
 
   return (
-      <div
-      className="card mx-auto border-0 border-bottom border-2 mt-3 p-3 mr-4"
-      style={{ maxWidth: 740 + "px" }}
-    >
+  <div className="outside">
       <div
         className="modal fade"
         id={`exampleModalCenter-${postId}`}
@@ -74,13 +71,13 @@ const Card = (post) => {
         </div>
       </div>
 
-      <div className="row">
-      <div className=" col-lg-4 col-12 align-self-center">
+      <div className="image-border">
           <img src={post.image} className=" img-responsive " alt="..." />
         </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <div className="headerCard">
+
+
+      <div className="content">
+          <div className="headerCard">
               <h5 className="card-title">{post.title}</h5>
               <div className={`dropdownMenu ${login ? "" : "hide"}`}>
                 <button className="btn btn-sm" onClick={toggle}>
@@ -106,7 +103,7 @@ const Card = (post) => {
               </div>
             </div>
 
-            <p className="card-text align-self-center">{post.desc}</p>
+            <span className="card-text">{post.desc}</span>
             <p className="card-text">
               <small className="text-muted">
                 {new Date(post.createdAt).toDateString()}
@@ -117,10 +114,9 @@ const Card = (post) => {
                 Read more
               </button>
             </Link>
-          </div>
-        </div>
       </div>
-    </div>
+</div>
+
   );
 };
 

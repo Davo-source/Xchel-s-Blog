@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useState } from "react";
 import Card from "../../components/card/card.component";
 import "./homepage.styles.css";
@@ -91,10 +91,12 @@ const HomePage = () => {
 
 
   return (
-    <div className="box">
+    <Fragment>
       <PostCarruselFirstPage />
 
+      <div className="box">
       <PostsSlicerDisplayer />
+      </div>
 
       <ReactPaginate
         breakLabel="..."
@@ -104,7 +106,7 @@ const HomePage = () => {
         previousLabel="< previous"
         renderOnZeroPageCount={null}
       />
-    </div>
+    </Fragment>
   );
 };
 export default HomePage;
