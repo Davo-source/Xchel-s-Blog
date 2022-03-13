@@ -102,7 +102,7 @@ const Card = (post) => {
                 </div>
               </div>
             </div>
-
+            <hr></hr>
             <span className="card-text">{post.desc}</span>
             <p className="card-text">
               <small className="text-muted">
@@ -110,7 +110,7 @@ const Card = (post) => {
               </small>
             </p>
             <Link to={`/post/${post.Id}`}>
-              <button type="button" className="btn btn-dark btn-sm">
+              <button type="button" className="btn btn-dark btn-sm rounded-pill">
                 Read more
               </button>
             </Link>

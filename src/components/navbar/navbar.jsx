@@ -21,7 +21,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <Navbar className="navbar" bg="light" expand="lg">
+      <Navbar className="navbar" expand="lg">
         <Container>
           <Navbar.Brand>
             <Link className="link" to="/">
@@ -50,7 +50,10 @@ const NavBar = () => {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button className="searchIcon">
+              <i className="fa-solid fa-magnifying-glass fa-lg"></i>
+              </Button>
+
             </Form>
           </Navbar.Collapse>
         </Container>

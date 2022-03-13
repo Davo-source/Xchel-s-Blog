@@ -6,11 +6,6 @@
   column-gap: 20px;
   row-gap: 15px;
 }
-/*.slide-img{
-  max-height: min-content;
-  max-width: max-content;
-  object-fit: contain;
-}*/
 
 .image-resize {
   overflow: hidden;
@@ -22,30 +17,97 @@
   object-fit: cover;
   object-position: center center;
   opacity: 15%;
-}
-.btn-warning{
-  position: absolute;
-  left: 75%;
-  top: 87%;
-  color: rgb(255, 254, 254) !important;
-  font: bolder;
+  animation: opacity 2.5s forwards;
 }
 .carousel-item{
   position: relative;
   display: flex;
-  margin-left: 10%;
+  margin-left: 13%;
+  margin-top: 3%;
   justify-content: center;
-  width: 80% !important;
+  width: 75% !important;
   height: calc(100vh - 200px);
+}
+.carousel-control-prev{
+  height: 20px;
+  width: 50px !important;
+  transform: rotate(135deg);
+  margin-left: 11%;
+  margin-top: 15%;
+  }
+  .carousel-control-next{
+    height: 20px;
+    width: 50px !important;
+    transform: rotate(-45deg);
+    margin-right: 10%;
+    margin-top: 15%;
+    }
+.arrow_carrot-next, .arrow_carrot-prev{
+  height: 35px;
+  width: 35px;
+  display: block;
+  border: 4px solid;
+  border-color: #1d95cf;;
+  background-color: #35a9e2;
+  }
+
+  .arrow_carrot-next::before{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 16px;
+    border-radius: 3px;
+    transform: rotate(90deg);
+    right: 12px;
+    margin-top: 19%;
+  }
+.arrow_carrot-next::after{
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 16px;
+  border-radius: 3px;
+  margin-top: 33%;
+  margin-left: 7%;
+}
+
+.arrow_carrot-prev::before{
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 16px;
+  border-radius: 3px;
+  transform: rotate(90deg);
+  right: 12px;
+  margin-top: 19%;
+}
+.arrow_carrot-prev::after{
+content: "";
+display: block;
+position: absolute;
+background-color: white;
+height: 3px;
+width: 16px;
+border-radius: 3px;
+margin-top: 33%;
+margin-left: 7%;
 }
 
 .title-card{
   color: black;
-  font: bold;
+  font:bolder;
 }
 .title-card:hover{
   animation: scaleTitle 3.5s forwards;
 }
+
+
 
 @keyframes scaleTitle{
   100%{
@@ -54,4 +116,9 @@
     transform: scale(1.5);
     left: 10px;
 }
+}
+@keyframes opacity {
+  100%{
+    opacity: 70%;
+  }
 }
