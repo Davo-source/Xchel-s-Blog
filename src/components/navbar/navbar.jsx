@@ -7,7 +7,7 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ContextGlobal } from "../../Estados/Contexto";
 import "./navbar.styles.css";
 
@@ -18,6 +18,14 @@ const NavBar = () => {
   const handleClick = () =>{
     setlogin(false);
   }
+
+let navigate = useNavigate();
+
+const handleSumbit = (event)=>{
+
+  event.preventDefault();
+  navigate("/directorio");
+}
 
   return (
     <div>
@@ -43,14 +51,15 @@ const NavBar = () => {
               </Nav.Link>
             </Nav>
 
-            <Form className="d-flex ms-auto">
+            <Form className="d-flex ms-auto" onSubmit={handleSumbit}>
               <FormControl
                 type="search"
                 placeholder="Search post"
                 className="me-2"
                 aria-label="Search"
+                required
               />
-              <Button className="searchIcon">
+              <Button className="searchIcon" type="submit" >
               <i className="fa-solid fa-magnifying-glass fa-lg"></i>
               </Button>
 

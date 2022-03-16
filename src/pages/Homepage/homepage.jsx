@@ -59,9 +59,9 @@ const HomePage = () => {
     return(
       postOnPage && 
       (currentPostIndex===0) &&
-      <Carousel fade variant = "dark" nextIcon ={objetoIcons.nextIcon} prevIcon={objetoIcons.prevIcon}>{
+      <Carousel fade interval={2500} nextIcon ={objetoIcons.nextIcon} prevIcon={objetoIcons.prevIcon}>{
        temp.map(({title, desc, image, _id}) => (
-            <Carousel.Item interval={2500}>
+            <Carousel.Item>
               
             <img
             className="image-resize"
@@ -71,7 +71,7 @@ const HomePage = () => {
           
            <Carousel.Caption>
            <Link to={`/post/${_id}` } style={{ textDecoration: 'none' }}>
-           <h3 className="title-card">{title}</h3>
+           <h2 className="title-card">{title}</h2>
           </Link>
             <p>{desc}</p>
           </Carousel.Caption>
