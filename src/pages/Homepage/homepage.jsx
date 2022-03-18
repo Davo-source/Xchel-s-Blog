@@ -8,16 +8,15 @@ import { Carousel } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 
-
 const HomePage = () => {
   const [totalPosts, setTotalPosts] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
   const [isFirstRender, setIsFirstRender] = useState(true);
-  const objetoIcons={
-    nextIcon: <span  className="arrow_carrot-next"></span>,
-    prevIcon: <span className="arrow_carrot-prev"></span>
-  }
+  const objetoIcons = {
+    nextIcon: <span className="arrow_carrot-next"></span>,
+    prevIcon: <span className="arrow_carrot-prev"></span>,
+  };
 
   const postsPerPage = 6; // establece la cantidad de posts en cada paginacion
 
@@ -34,13 +33,11 @@ const HomePage = () => {
     currentPostIndex,
     currentPostIndex + postsPerPage
   );
-  const temp = postOnPage.slice(0,12);
+  const temp = postOnPage.slice(0, 12);
 
   //funcion para desplegar los posts limitados
   const PostsSlicerDisplayer = () => {
-
     return (
-
       postOnPage &&
       postOnPage.map(({ _id, title, createdAt, desc, image }) => (
         <Card
@@ -55,33 +52,32 @@ const HomePage = () => {
     );
   };
 
-  const PostCarruselFirstPage = () =>{
-    return(
-      postOnPage && 
-      (currentPostIndex===0) &&
-      <Carousel fade variant = "dark" nextIcon ={objetoIcons.nextIcon} prevIcon={objetoIcons.prevIcon}>{
-       temp.map(({title, desc, image, _id}) => (
+  const PostCarruselFirstPage = () => {
+    return (
+      postOnPage &&
+      currentPostIndex === 0 && (
+        <Carousel
+          fade
+          variant="dark"
+          nextIcon={objetoIcons.nextIcon}
+          prevIcon={objetoIcons.prevIcon}
+        >
+          {temp.map(({ title, desc, image, _id }) => (
             <Carousel.Item interval={2500}>
-              
-            <img
-            className="image-resize"
-            src={image}
-          alt="slide show"
-          />
-          
-           <Carousel.Caption>
-           <Link to={`/post/${_id}` } style={{ textDecoration: 'none' }}>
-           <h3 className="title-card">{title}</h3>
-          </Link>
-            <p>{desc}</p>
-          </Carousel.Caption>
+              <img className="image-resize" src={image} alt="slide show" />
+
+              <Carousel.Caption>
+                <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
+                  <h3 className="title-card">{title}</h3>
+                </Link>
+                <p>{desc}</p>
+              </Carousel.Caption>
             </Carousel.Item>
-          )
-        
-      )}
-      </Carousel>
+          ))}
+        </Carousel>
+      )
     );
-  }
+  };
 
   useEffect(() => {
     if (isFirstRender) {
@@ -95,14 +91,12 @@ const HomePage = () => {
     };
   }, [totalPosts]);
 
-
-
   return (
     <Fragment>
       <PostCarruselFirstPage />
 
       <div className="box">
-      <PostsSlicerDisplayer />
+        <PostsSlicerDisplayer />
       </div>
 
       <ReactPaginate
@@ -117,4 +111,3 @@ const HomePage = () => {
   );
 };
 export default HomePage;
-

@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./EditArticle.css";
 import axios from "axios";
 import { useEffect } from "react";
+import { PreviewMarkdown } from "../../components/previewMarkdown/PreviewMarkdown.jsx";
 
 const EditArticle = () => {
   const [title, setTitle] = useState(" ");
@@ -100,6 +101,7 @@ const EditArticle = () => {
           Confirm changes
         </button>
       </form>
+      <PreviewMarkdown markdownText={markDown}></PreviewMarkdown>
     </div>
   );
 };
