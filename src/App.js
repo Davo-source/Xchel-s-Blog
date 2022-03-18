@@ -9,6 +9,7 @@ import Post from "./pages/Readmore/Post";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ContextGlobal } from "./Estados/Contexto";
 import EditArticle from "./pages/EditArticle/EditArticle";
+import Directorio from "./pages/Directorio/directorio";
 function App() {
   const [login] = useContext(ContextGlobal);
 
@@ -32,7 +33,10 @@ function App() {
         />
 
         <Route path="/posts" element={<HomePage />} />
+
         <Route path="/post/:id" element={<Post />} />
+        
+        <Route path="/directorio" element={<Directorio />} />
       </Routes>
     </BrowserRouter>
   );

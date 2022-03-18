@@ -58,17 +58,17 @@ const HomePage = () => {
       currentPostIndex === 0 && (
         <Carousel
           fade
-          variant="dark"
+          interval={2500}
           nextIcon={objetoIcons.nextIcon}
           prevIcon={objetoIcons.prevIcon}
         >
           {temp.map(({ title, desc, image, _id }) => (
-            <Carousel.Item interval={2500}>
+            <Carousel.Item>
               <img className="image-resize" src={image} alt="slide show" />
 
               <Carousel.Caption>
                 <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
-                  <h3 className="title-card">{title}</h3>
+                  <h2 className="title-card">{title}</h2>
                 </Link>
                 <p>{desc}</p>
               </Carousel.Caption>
@@ -110,4 +110,5 @@ const HomePage = () => {
     </Fragment>
   );
 };
+
 export default HomePage;

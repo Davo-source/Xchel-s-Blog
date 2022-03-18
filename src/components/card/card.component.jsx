@@ -78,7 +78,7 @@ const Card = (post) => {
 
       <div className="content">
           <div className="headerCard">
-              <h5 className="card-title">{post.title}</h5>
+              <h5 className="card-title mt-4">{post.title}</h5>
               <div className={`dropdownMenu ${login ? "" : "hide"}`}>
                 <button className="btn btn-sm" onClick={toggle}>
                   <i className=" fa-solid fa-ellipsis fa-lg"></i>
