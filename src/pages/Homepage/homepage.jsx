@@ -19,7 +19,7 @@ const HomePage = () => {
     prevIcon: <span className="arrow_carrot-prev"></span>
   }
 
-  const postsPerPage = 6; // establece la cantidad de posts en cada paginacion
+  const postsPerPage = 11; // establece la cantidad de posts en cada paginacion
 
   const fetchPosts = async () => {
     const resp = await axios.get("/posts");
@@ -100,7 +100,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <PostCarruselFirstPage />
-
+    <h1>Mas recientes</h1>
       <div className="box">
       <PostsSlicerDisplayer />
       </div>
