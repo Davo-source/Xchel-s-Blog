@@ -1,6 +1,4 @@
 .img-responsive {
-  border-radius: 5px;
-  border: none;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
@@ -9,6 +7,8 @@
 .headerCard {
   display: flex;
   justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .content:hover .dropdownMenu {
@@ -23,14 +23,18 @@
   margin: 5px;
   border-radius: 10px;
   box-shadow: 0px 1px 15px 1px #2d33883d;
+  height: 80vh;
+  overflow: hidden;
+  transition-property: box-shadow, opacity, transform;
+  transition-duration: .3s; 
 }
 .image-border{
   display: grid;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  
   margin: 0;
-  height: 45vh;
+  height: 45%;
 }
 .content{
   display: grid;
@@ -43,11 +47,21 @@
 }
 .card-text{
   text-align: left !important;
+  padding-left: 30px;
+  padding-right: 30px;
 }
-
-hr{
-  border-style:none; /*PARA QUE NO SALGAN LA LINEA*/
-  border-top-style: dotted;
-  border-color: grey;
-  border-width: 8px; /*CADA PUNTO ES UN PIXEL*/
+.link-cards{
+  text-decoration: none;
+  color: black;
+}
+.link-cards:hover{
+  color: black;
+}
+.outside:hover{
+  box-shadow: 1xp 1px 18px 8px;
+  transform: scale(0.9) scale(1.2);
+  opacity: 89%;
+}
+.card-admin:hover{
+overflow: visible;
 }

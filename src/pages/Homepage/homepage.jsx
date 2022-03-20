@@ -33,7 +33,7 @@ const HomePage = () => {
     currentPostIndex,
     currentPostIndex + postsPerPage
   );
-  const temp = postOnPage.slice(0, 12);
+  const temp = totalPosts.slice(0, 12);
 
   //funcion para desplegar los posts limitados
   const PostsSlicerDisplayer = () => {
@@ -94,7 +94,14 @@ const HomePage = () => {
   return (
     <Fragment>
       <PostCarruselFirstPage />
-    <h1>Mas recientes</h1>
+    <h1 style={{textAlign: "center"}}>
+      <span className="entries">Arti</span>
+      <span className="recents">culos</span>
+      <span className="android"> publicados</span>
+    </h1>
+    <div className="separador">
+      <i className="far fa-list-alt"></i>
+    </div>
       <div className="box">
         <PostsSlicerDisplayer />
       </div>
