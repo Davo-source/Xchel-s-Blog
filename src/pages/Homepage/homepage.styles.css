@@ -3,7 +3,7 @@
   margin: 15vw;
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   column-gap: 20px;
   row-gap: 15px;
 }
