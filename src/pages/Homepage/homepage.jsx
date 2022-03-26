@@ -95,9 +95,9 @@ const HomePage = () => {
     <Fragment>
       <PostCarruselFirstPage />
 
-    <div className="separador mt-5">
-      <i className="far fa-list-alt"></i>
-    </div>
+      <div className="separador mt-5">
+        <i className="far fa-list-alt"></i>
+      </div>
       <div className="box">
         <PostsSlicerDisplayer />
       </div>
@@ -110,11 +110,8 @@ const HomePage = () => {
         previousLabel=" "
         renderOnZeroPageCount={null}
       />
-      <div>
-      Foot
-    </div>
+      <div>Foot</div>
     </Fragment>
-    
   );
 };
 

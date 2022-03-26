@@ -14,7 +14,6 @@ const Post = () => {
     const fetchPosts = async () => {
       const resp = await axios.get("/posts/" + PostId);
       setPost(resp.data);
-      console.log(resp.data);
     };
 
     fetchPosts();
@@ -32,9 +31,7 @@ const Post = () => {
         </div>
       </div>
 
-      <div>
-        <PreviewMarkdown markdownText={post.markdown}></PreviewMarkdown>
-      </div>
+      <PreviewMarkdown markdownText={post.markdown}></PreviewMarkdown>
     </div>
   );
 };

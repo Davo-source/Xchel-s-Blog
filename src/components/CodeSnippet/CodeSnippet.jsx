@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import darkStyle from "../CodeSnippet/darkStyle";
+import "./codesnippet.css";
+
 export const CodeSnippet = ({ className, children, active }) => {
   const [languages, SetLanguages] = useState(className ? className : []); //si no hay atributo classname poner array nulo (esto evita crasheos)
   // los crasheos cuando no tiene active
   const [activeLanguage, SetActiveLanguage] = useState(active);
   const [activeContent, SetActiveContent] = useState("");
 
-  useEffect(() => { 
+  useEffect(() => {
     const element = children.filter((element) => {
       if (
         String(element.tagName).toLocaleLowerCase() ===
@@ -30,7 +32,7 @@ export const CodeSnippet = ({ className, children, active }) => {
   };
 
   return (
-    <div>
+    <div className="snippet">
       {languages.map((lang) => (
         <button key={lang} className={lang} value={lang} onClick={handler}>
           {lang}

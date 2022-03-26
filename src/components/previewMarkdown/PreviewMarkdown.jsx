@@ -7,25 +7,27 @@ import { CodeSnippet } from "../CodeSnippet/CodeSnippet";
 
 const PreviewMarkdown = ({ markdownText }) => {
   return (
-    <ReactMarkdown
-      children={markdownText}
-      rehypePlugins={[rehypeRaw]}
-      remarkPlugins={[remarkGfm]}
-      skipHtml={false}
-      components={{
-        pre({ node }) {
-          const { children, properties } = node;
+    <div className="markdown">
+      <ReactMarkdown
+        children={markdownText}
+        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm]}
+        skipHtml={false}
+        components={{
+          pre({ node }) {
+            const { children, properties } = node;
 
-          return (
-            <CodeSnippet
-              className={properties.className}
-              children={children}
-              active={properties.active}
-            />
-          );
-        },
-      }}
-    ></ReactMarkdown>
+            return (
+              <CodeSnippet
+                className={properties.className}
+                children={children}
+                active={properties.active}
+              />
+            );
+          },
+        }}
+      ></ReactMarkdown>
+    </div>
   );
 };
 export { PreviewMarkdown };
