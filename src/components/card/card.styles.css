@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
+
 }
 
 .content:hover .dropdownMenu {
@@ -19,6 +20,7 @@
   border-radius: 10px;
   box-shadow: 0px 1px 15px 1px #2d33883d;
   height: 80vh;
+  min-height: 35rem;
   overflow: hidden;
   transition-property: box-shadow, opacity, transform;
   transition-duration: .3s; 
@@ -45,8 +47,9 @@
 }
 .card-text{
   text-align: left !important;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .link-cards{
   text-decoration: none;
@@ -57,7 +60,7 @@
 }
 .outside:hover{
   box-shadow: 1xp 1px 18px 8px;
-  transform: scale(0.9) scale(1.2);
+  transform: scale(0.9) scale(1.13);
   opacity: 89%;
 }
 .card-admin:hover{
