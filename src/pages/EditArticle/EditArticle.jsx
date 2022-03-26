@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
 import "./EditArticle.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { PreviewMarkdown } from "../../components/previewMarkdown/PreviewMarkdown.jsx";
+import { useNavigate } from "react-router-dom"
 
 const EditArticle = () => {
   const [title, setTitle] = useState(" ");
@@ -28,7 +29,8 @@ const EditArticle = () => {
     };
     fetchPost();
   }, [postId]);
-
+  
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const update = {
@@ -41,8 +43,9 @@ const EditArticle = () => {
     try {
       await axios
         .put(`/posts/${postId}`, update)
-        .then(window.location.replace(`/post/${postId}`));
-    } catch (err) {
+      navigate(`../post/${postId}`, {replace: true})
+    }
+     catch (err) {
       console.log(err);
     }
   };

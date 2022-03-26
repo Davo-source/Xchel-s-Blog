@@ -153,3 +153,119 @@
   right: 52%;
   border-bottom: 1px solid #1390da;
 }
+.paginate-container > ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+.paginate-container > ul > li{
+  display: flex;
+  height: 18.667px;
+  width: 34px;
+}
+.paginate-container > ul > li a, 
+.paginate-container > ul > .selected a{
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  line-height: 32px;
+  vertical-align: middle;
+  position: absolute;
+  z-index: 1;
+  align-self: center;
+}
+
+.paginate-container > ul > li a:hover,
+.selected a:hover{
+  background-color: #e4e2e2;
+  color: black;
+}
+.paginate-container > ul li:first-child,
+.paginate-container > ul li:last-child{
+  background-color: #ffff;
+  border: none;
+  height: 18.677px;
+  width: 52px;
+  }
+  .paginate-container > ul li:first-child a,
+  .paginate-container > ul li:last-child a{
+    background-color: #ffff;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 50%;
+    height: 48px ;
+    width: 48px;
+    margin-top: 0;
+    position: absolute;
+    z-index: 1;
+    align-self: center;
+  }
+  .paginate-container > ul li:first-child a:hover,
+  .paginate-container > ul li:last-child a:hover{
+    opacity: 1;
+    border: 1px solid;
+    background-color: #eeeeee;
+  }
+  .activo-boton{
+    background-color: black;
+    text-decoration: none;
+    color: #ffff;
+    pointer-events: none;
+  }
+.desactivo-boton{
+  pointer-events: none !important;
+  opacity: 30%;
+
+}
+.paginate-container > ul li:last-child a::after {
+  content: "";
+  display: block;
+  z-index: 1;
+  background-color: black;
+  height: 3px;
+  width: 10px;
+  border-radius: 3px;
+  margin-top: 51%;
+  margin-left: 40%;
+  transform: rotateZ(-45deg);
+}
+.paginate-container > ul li:last-child a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 10px;
+  margin-top: 40%;
+  margin-left: 40%;
+  border-radius: 3px;
+  transform: rotateZ(45deg);
+  
+}
+.paginate-container > ul li:first-child a::after {
+  content: "";
+  display: block;
+  z-index: 1;
+  background-color: black;
+  height: 3px;
+  width: 10px;
+  border-radius: 3px;
+  margin-top: 52%;
+  margin-left: 40%;
+  transform: rotateZ(45deg);
+}
+.paginate-container > ul li:first-child a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 10px;
+  margin-top: 39%;
+  margin-left: 40%;
+  border-radius: 3px;
+  transform: rotateZ(-45deg);
+  
+}

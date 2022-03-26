@@ -4,17 +4,18 @@
   justify-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
-
 }
 
 .content:hover .dropdownMenu {
   display: block;
 }
 
-.dropdownMenu {
+.dropdown-menu {
+  position: absolute;
   display: block;
-  align-self: start;
 }
+
+
 .outside{
   margin: 5px;
   border-radius: 10px;
@@ -25,7 +26,7 @@
   transition-property: box-shadow, opacity, transform;
   transition-duration: .3s; 
 }
-.image-border{
+.image-border, .image-border:hover{
   display: grid;
   align-items: center;
   justify-content: center;
@@ -35,6 +36,8 @@
   object-position: center center;
   margin: 0;
   height: 45%;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .content{
   display: grid;
@@ -44,6 +47,7 @@
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .card-text{
   text-align: left !important;
@@ -62,7 +66,11 @@
   box-shadow: 1xp 1px 18px 8px;
   transform: scale(0.9) scale(1.13);
   opacity: 89%;
+  overflow: visible;
+  border-radius: 10px;
 }
-.card-admin:hover{
-overflow: visible;
+
+.sub-content{
+  overflow: hidden;
+  background-color: #fff;
 }

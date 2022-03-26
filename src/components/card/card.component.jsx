@@ -103,7 +103,7 @@ const Card = (post) => {
               </div>
             </div>
             <hr></hr>
-            
+           <div className="sub-content"> 
             <Link to={`/post/${post.Id}`} className="link-cards">
             <span className="card-text">{post.desc}</span>
 
@@ -114,6 +114,7 @@ const Card = (post) => {
               </small>
             </p>
             </Link>
+          </div>
       </div>
       
 </div>

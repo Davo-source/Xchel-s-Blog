@@ -18,7 +18,8 @@ const HomePage = () => {
     prevIcon: <span className="arrow_carrot-prev"></span>,
   };
 
-  const postsPerPage = 11; // establece la cantidad de posts en cada paginacion
+
+  const postsPerPage = 12; // establece la cantidad de posts en cada paginacion
 
   const fetchPosts = async () => {
     const resp = await axios.get("/posts");
@@ -80,7 +81,9 @@ const HomePage = () => {
   };
 
   useEffect(() => {
+    
     if (isFirstRender) {
+      window.scrollTo(0, 0);
       fetchPosts();
       setIsFirstRender(!isFirstRender);
     } else {
@@ -101,15 +104,24 @@ const HomePage = () => {
       <div className="box">
         <PostsSlicerDisplayer />
       </div>
-
+      <div className="paginate-container">
       <ReactPaginate
         breakLabel="..."
         nextLabel=" "
         onPageChange={handlePage}
+        onClick={() => (window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        }))}
         pageCount={pageCount}
         previousLabel=" "
         renderOnZeroPageCount={null}
+        activeLinkClassName="activo-boton"
+        disabledLinkClassName="desactivo-boton"
+        disabledClassName="inactivo-number"
       />
+      </div>
       <div>Foot</div>
     </Fragment>
   );
