@@ -32,7 +32,8 @@ const Card = (post) => {
   };
 
   return (
-  <div className="outside">
+  <div className={`outside ${login ? "card-admin" : ""}`}>
+       
       <div
         className="modal fade"
         id={`exampleModalCenter-${postId}`}
@@ -70,11 +71,11 @@ const Card = (post) => {
           </div>
         </div>
       </div>
-
+      <Link to={`/post/${post.Id}`} className="link-cards">
       <div className="image-border">
           <img src={post.image} className=" img-responsive " alt="..." />
         </div>
-
+        </Link>
 
       <div className="content">
           <div className="headerCard">
@@ -102,19 +103,17 @@ const Card = (post) => {
                 </div>
               </div>
             </div>
+            <Link to={`/post/${post.Id}`} className="link-cards">
             <hr></hr>
             <span className="card-text">{post.desc}</span>
             <p className="card-text">
-              <small className="text-muted">
+              <small className="text-muted mt-2">
                 {new Date(post.createdAt).toDateString()}
               </small>
             </p>
-            <Link to={`/post/${post.Id}`}>
-              <button type="button" className="btn btn-dark btn-sm rounded-pill">
-                Read more
-              </button>
             </Link>
       </div>
+      
 </div>
 
   );

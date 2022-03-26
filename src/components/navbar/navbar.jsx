@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextGlobal } from "../../Estados/Contexto";
+import Directorio from "../../pages/Directorio/directorio";
 import "./navbar.styles.css";
 
 
@@ -22,7 +23,6 @@ const NavBar = () => {
 let navigate = useNavigate();
 
 const handleSumbit = (event)=>{
-
   event.preventDefault();
   navigate("/directorio");
 }
