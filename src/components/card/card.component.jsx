@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./card.styles.css";
 import { useState } from "react";
@@ -32,51 +32,50 @@ const Card = (post) => {
   };
 
   return (
-  <div className={`outside ${login ? "card-admin" : ""}`}>
-       
+    <Fragment>
       <div
-        className="modal fade"
-        id={`exampleModalCenter-${postId}`}
-        tabIndex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="false"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLongTitle">
-                Are you sure?
-              </h5>
-            </div>
-            <div className="modal-body">
-              This will delete all the post content and no undo can be done
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-primary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                onClick={handleDelete}
-                type="button"
-                className="btn btn-danger"
-              >
-                Delete
-              </button>
-            </div>
-          </div>
+    className="modal fade"
+    id={`exampleModalCenter-${postId}`}
+    tabIndex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="false"
+  >
+    <div className="modal-dialog modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLongTitle">
+            Are you sure?
+          </h5>
+        </div>
+        <div className="modal-body">
+          This will delete all the post content and no undo can be done
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            onClick={handleDelete}
+            type="button"
+            className="btn btn-danger"
+          >
+            Delete
+          </button>
         </div>
       </div>
-      <Link to={`/post/${post.Id}`} className="link-cards">
-      <div className="image-border">
-          <img src={post.image} className=" img-responsive " alt="..." />
+    </div>
+  </div>
+  <div className={`outside ${login ? "card-admin" : ""}`}>
+  <Link to={`/post/${post.Id}`} className="link-cards">
+      <div className="image-border" style={{backgroundImage: `url(${post.image})`}}>
+          
         </div>
         </Link>
-
       <div className="content">
           <div className="headerCard">
               <h5 className="card-title mt-4">{post.title}</h5>
@@ -103,9 +102,12 @@ const Card = (post) => {
                 </div>
               </div>
             </div>
-            <Link to={`/post/${post.Id}`} className="link-cards">
             <hr></hr>
+            
+            <Link to={`/post/${post.Id}`} className="link-cards">
             <span className="card-text">{post.desc}</span>
+
+
             <p className="card-text">
               <small className="text-muted mt-2">
                 {new Date(post.createdAt).toDateString()}
@@ -115,7 +117,7 @@ const Card = (post) => {
       </div>
       
 </div>
-
+</Fragment>
   );
 };
 

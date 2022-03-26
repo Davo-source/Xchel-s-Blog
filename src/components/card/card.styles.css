@@ -1,9 +1,4 @@
-.img-responsive {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  object-position: center center;
-}
+
 .headerCard {
   display: flex;
   justify-content: space-between;
@@ -32,7 +27,10 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  
+  background-size: 100% 100%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center center;
   margin: 0;
   height: 45%;
 }

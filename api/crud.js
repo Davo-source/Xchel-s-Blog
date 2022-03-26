@@ -53,7 +53,7 @@ router.get("/:id", async (req, res) => {
 //GET ALL POSTS
 router.get("/", async (req, res) => {
   try {
-    let posts = await Post.find();
+    let posts = await Post.find().sort({createdAt: 'desc'});
     res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ramaraja&family=Oswald:wght@700&display=swap');
 .box {
   margin: 15vw;
   margin-top: 50px;
@@ -122,19 +122,13 @@ margin-left: 7%;
     left: 10px;
 }
 }
-.entries{
-  color: #1390da;
-  font-family: 'Lato', 'sans-serif';
-  font-weight: 900;
-}
-.recents{
-  color: #f2820f;
-  font-family: 'Lato', 'sans-serif';
+.recents, .entries{
+  color: #78c257;
+  font-family: 'Ramaraja', serif;
   font-weight: 900;
 }
 .android{
-  color: #78c257;
-  font-family: 'Lato', 'sans-serif';
+  font-family: 'Ramaraja', serif;
   font-weight: 900;
 }
 .separador{
@@ -159,3 +153,47 @@ margin-left: 7%;
   right: 52%;
   border-bottom: 1px solid #1390da;
 }
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+li{
+  display: flex;
+  height: 18.667px;
+  width: 34px;
+}
+li a, .selected a{
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  align-self: center;
+}
+li a:hover, .selected a:hover{
+  background-color: black;
+  color: white !important;
+}
+
+ul li:first-child, ul li:last-child{
+background-color: #ffff;
+border: none;
+height: 18.677px;
+width: 52px;
+}
+ul li:first-child a, ul li:last-child a{
+  background-color: #ffff;
+  border: 1px solid;
+  border-radius: 50%;
+  height: 48px ;
+  width: 48px;
+  opacity: 30%;
+  margin-top: 0;
+  position: absolute;
+  z-index: 1;
+  align-self: center;
+}
+

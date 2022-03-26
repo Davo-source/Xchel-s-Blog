@@ -94,12 +94,8 @@ const HomePage = () => {
   return (
     <Fragment>
       <PostCarruselFirstPage />
-    <h1 style={{textAlign: "center"}}>
-      <span className="entries">Arti</span>
-      <span className="recents">culos</span>
-      <span className="android"> publicados</span>
-    </h1>
-    <div className="separador">
+
+    <div className="separador mt-5">
       <i className="far fa-list-alt"></i>
     </div>
       <div className="box">
@@ -108,13 +104,17 @@ const HomePage = () => {
 
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=" "
         onPageChange={handlePage}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel=" "
         renderOnZeroPageCount={null}
       />
+      <div>
+      Foot
+    </div>
     </Fragment>
+    
   );
 };
 

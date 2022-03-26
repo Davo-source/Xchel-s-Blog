@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 const express = require("express");
 const prueba = require("./Xchel");
 const prueba2 = require("./Post");
@@ -11,10 +12,12 @@ const postRoute = require("./crud");
 /*MALA PRACTICA HACER CODIGO DE CONEXION A BBDD AQUI,  PERO DEBIDO A QUE NO NOS PAGAN
  LO SUFICIENTE SE DECIDIO HACER MALAS PRACTICAS EN VENGANZA
 */
+dotenv.config()
+
 async function main() {
   await mongoose
     .connect(
-      "mongodb+srv://Doramox:DavidRules156@cluster0.spcn1.mongodb.net/blog?retryWrites=true&w=majority",
+      process.env.MONGO_URL,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
