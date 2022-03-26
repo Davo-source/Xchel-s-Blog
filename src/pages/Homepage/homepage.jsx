@@ -63,7 +63,7 @@ const HomePage = () => {
           prevIcon={objetoIcons.prevIcon}
         >
           {temp.map(({ title, desc, image, _id }) => (
-            <Carousel.Item>
+            <Carousel.Item key={_id}>
               <img className="image-resize" src={image} alt="slide show" />
 
               <Carousel.Caption>
