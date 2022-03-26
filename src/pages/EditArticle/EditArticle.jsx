@@ -48,60 +48,67 @@ const EditArticle = () => {
   };
 
   return (
-    <div className="container-md">
-      <form className="p-4" onSubmit={handleSubmit}>
-        <div className="row ">
-          <div className="form-group col-12 col-md-6">
-            <h5>Title</h5>
-            <input
-              type="text"
-              className="form-control mt-2 mb-3 "
-              id="formGroupExampleInput"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group col-12 col-md-6">
-            <h5>Image</h5>
-            <input
-              type="url"
-              className="form-control mt-2 mb-3"
-              id="formGroupExampleInput2"
-              value={imageURL}
-              onChange={(e) => setImageURL(e.target.value)}
-              required
-            />
-          </div>
-        </div>
-        <div className="form-group">
-          <h5>Resume</h5>
-          <input
-            type="text"
-            className="form-control mt-2 mb-3"
-            id="formGroupExampleInput4"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
+    <div className="container-md mt-4">
+      <div className="row">
+        <div className="col">
+          <form className="p-4" onSubmit={handleSubmit}>
+            <div className="row ">
+              <div className="form-group col-12 col-md-5">
+                <h5>Title</h5>
+                <input
+                  type="text"
+                  className="form-control mt-2 mb-3 "
+                  id="formGroupExampleInput"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group col-12 col-md-7">
+                <h5>Image</h5>
+                <input
+                  type="url"
+                  className="form-control mt-2 mb-3"
+                  id="formGroupExampleInput2"
+                  value={imageURL}
+                  onChange={(e) => setImageURL(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <h5>Resume</h5>
+              <input
+                type="text"
+                className="form-control mt-2 mb-3"
+                id="formGroupExampleInput4"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <h5>Markdown content</h5>
+              <textarea
+                className="form-control mt-2 mb-3"
+                id="textArea"
+                rows="30"
+                value={markDown}
+                onChange={(e) => setMarkDown(e.target.value.toString())}
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="btn btn-success  mt-4">
+              Confirm changes
+            </button>
+          </form>
         </div>
 
-        <div className="form-group">
-          <h5>Markdown content</h5>
-          <textarea
-            className="form-control mt-2 mb-3"
-            id="textArea"
-            rows="8"
-            value={markDown}
-            onChange={(e) => setMarkDown(e.target.value)}
-            required
-          ></textarea>
+        <div className="preview col-12 col-md-6 p-5">
+          <PreviewMarkdown markdownText={markDown}></PreviewMarkdown>
         </div>
-        <button type="submit" className="btn btn-success col-12 col-md-3 mt-4">
-          Confirm changes
-        </button>
-      </form>
-      <PreviewMarkdown markdownText={markDown}></PreviewMarkdown>
+      </div>
     </div>
   );
 };
