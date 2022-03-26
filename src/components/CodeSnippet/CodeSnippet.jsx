@@ -7,7 +7,7 @@ export const CodeSnippet = ({ className, children, active }) => {
   const [activeLanguage, SetActiveLanguage] = useState(active);
   const [activeContent, SetActiveContent] = useState("");
 
-  useEffect(() => {
+  useEffect(() => { 
     const element = children.filter((element) => {
       if (
         String(element.tagName).toLocaleLowerCase() ===
