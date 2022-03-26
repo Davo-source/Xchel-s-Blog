@@ -27,7 +27,7 @@ const EditArticle = () => {
       setArticleValues(resp.data);
     };
     fetchPost();
-  }, []);
+  }, [postId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
