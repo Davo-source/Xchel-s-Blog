@@ -12,8 +12,9 @@ const EditArticle = () => {
   const [description, setDescription] = useState("");
   const [markDown, setMarkDown] = useState("");
 
-  let url = window.location.pathname;
-  let postId = url.split("/")[2];
+  let urlpre = window.location.pathname;
+  let url = urlpre.split("/");
+  let postId = url[url.length-1];
 
   function setArticleValues(data) {
     setTitle(data.title);

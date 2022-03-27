@@ -1,5 +1,6 @@
 {
   "name": "xchel-blog",
+  "homepage": "http://idaxmx.com/xcheldev",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
