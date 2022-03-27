@@ -17,24 +17,24 @@ function App() {
     <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/xcheldev" element={<HomePage />} />
         <Route
-          path="/XchelAdministrador"
+          path="/xcheldev/XchelAdministrador"
           element={login ? <HomePage /> : <Login />}
         />
         <Route
-          path="/newArticle"
+          path="/xcheldev/newArticle"
           element={login ? <NewArticle /> : <HomePage />}
         />
 
         <Route
-          path="/editArticle/:id"
+          path="/xcheldev/editArticle/:id"
           element={login ? <EditArticle /> : <HomePage />}
         />
 
-        <Route path="/posts" element={<HomePage />} />
+        <Route path="/xcheldev/posts" element={<HomePage />} />
 
-        <Route path="/post/:id" element={<Post />} />
+        <Route path="/xcheldev/post/:id" element={<Post />} />
       </Routes>
     </BrowserRouter>
   );

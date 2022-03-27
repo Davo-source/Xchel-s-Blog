@@ -68,7 +68,7 @@ const HomePage = () => {
               <img className="image-resize" src={image} alt="slide show" />
 
               <Carousel.Caption>
-                <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
+                <Link to={`/xcheldev/post/${_id}`} style={{ textDecoration: "none" }}>
                   <h2 className="title-card">{title}</h2>
                 </Link>
                 <p>{desc}</p>

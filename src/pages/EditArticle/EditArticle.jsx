@@ -44,7 +44,7 @@ const EditArticle = () => {
     try {
       await axios
         .put(`/posts/${postId}`, update)
-      navigate(`../post/${postId}`, {replace: true})
+      navigate(`/xcheldev/post/${postId}`, {replace: true})
     }
      catch (err) {
       console.log(err);
