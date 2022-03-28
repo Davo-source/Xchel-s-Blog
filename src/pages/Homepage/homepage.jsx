@@ -9,6 +9,7 @@ import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
+  
   const [totalPosts, setTotalPosts] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
@@ -22,7 +23,7 @@ const HomePage = () => {
   const postsPerPage = 12; // establece la cantidad de posts en cada paginacion
 
   const fetchPosts = async () => {
-    const resp = await axios.get("/posts");
+    const resp = await axios.get(`/posts`);
     setTotalPosts(resp.data);
   };
 
@@ -81,7 +82,6 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    
     if (isFirstRender) {
       window.scrollTo(0, 0);
       fetchPosts();
