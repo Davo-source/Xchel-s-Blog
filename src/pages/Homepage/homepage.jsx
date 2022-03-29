@@ -9,6 +9,7 @@ import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
+  
   const [totalPosts, setTotalPosts] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
@@ -18,10 +19,11 @@ const HomePage = () => {
     prevIcon: <span className="arrow_carrot-prev"></span>,
   };
 
-  const postsPerPage = 11; // establece la cantidad de posts en cada paginacion
+
+  const postsPerPage = 12; // establece la cantidad de posts en cada paginacion
 
   const fetchPosts = async () => {
-    const resp = await axios.get("/posts");
+    const resp = await axios.get(`/posts`);
     setTotalPosts(resp.data);
   };
 
@@ -67,7 +69,7 @@ const HomePage = () => {
               <img className="image-resize" src={image} alt="slide show" />
 
               <Carousel.Caption>
-                <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
+                <Link to={`/xcheldev/post/${_id}`} style={{ textDecoration: "none" }}>
                   <h2 className="title-card">{title}</h2>
                 </Link>
                 <p>{desc}</p>
@@ -81,6 +83,7 @@ const HomePage = () => {
 
   useEffect(() => {
     if (isFirstRender) {
+      window.scrollTo(0, 0);
       fetchPosts();
       setIsFirstRender(!isFirstRender);
     } else {
@@ -101,15 +104,24 @@ const HomePage = () => {
       <div className="box">
         <PostsSlicerDisplayer />
       </div>
-
+      <div className="paginate-container">
       <ReactPaginate
         breakLabel="..."
         nextLabel=" "
         onPageChange={handlePage}
+        onClick={() => (window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        }))}
         pageCount={pageCount}
         previousLabel=" "
         renderOnZeroPageCount={null}
+        activeLinkClassName="activo-boton"
+        disabledLinkClassName="desactivo-boton"
+        disabledClassName="inactivo-number"
       />
+      </div>
       <div>Foot</div>
     </Fragment>
   );

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { createContext, useState } from "react";
 
 
+
 export const ContextGlobal = createContext();
 const INITIAL_STATE = {
   state: JSON.parse(localStorage.getItem("login")) || false

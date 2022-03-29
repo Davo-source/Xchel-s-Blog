@@ -20,7 +20,7 @@ const Card = (post) => {
   const handleDelete = async () => {
     try {
       const res = await axios.delete("/posts/" + postId, {});
-      window.location.replace("/");
+      window.location.replace("/xcheldev");
       console.log(res.data);
     } catch (err) {
       console.log(err);
@@ -28,7 +28,7 @@ const Card = (post) => {
   };
 
   const handleEdit = () => {
-    navigate(`/editArticle/${postId}`);
+    navigate(`/xcheldev/editArticle/${postId}`);
   };
 
   return (
@@ -71,7 +71,7 @@ const Card = (post) => {
     </div>
   </div>
   <div className={`outside ${login ? "card-admin" : ""}`}>
-  <Link to={`/post/${post.Id}`} className="link-cards">
+  <Link to={`/xcheldev/post/${post.Id}`} className="link-cards">
       <div className="image-border" style={{backgroundImage: `url(${post.image})`}}>
           
         </div>
@@ -103,8 +103,8 @@ const Card = (post) => {
               </div>
             </div>
             <hr></hr>
-            
-            <Link to={`/post/${post.Id}`} className="link-cards">
+           <div className="sub-content"> 
+            <Link to={`/xcheldev/post/${post.Id}`} className="link-cards">
             <span className="card-text">{post.desc}</span>
 
 
@@ -114,6 +114,7 @@ const Card = (post) => {
               </small>
             </p>
             </Link>
+          </div>
       </div>
       
 </div>

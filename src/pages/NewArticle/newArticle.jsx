@@ -18,7 +18,7 @@ const NewArticle = () => {
         description,
         markDown,
       });
-      window.location.replace("/post/" + res.data._id);
+      window.location.replace("/xcheldev/post/" + res.data._id);
     } catch (err) {
       console.log(err);
     }

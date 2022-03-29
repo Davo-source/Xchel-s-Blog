@@ -8,6 +8,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "bootstrap/dist/js/bootstrap.min.js";
+import axios from 'axios';
+
+axios.defaults.baseURL= process.env.REACT_APP_API_URL;
 
 ReactDOM.render(
   <React.StrictMode>

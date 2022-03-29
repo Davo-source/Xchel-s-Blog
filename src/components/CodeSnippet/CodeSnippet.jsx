@@ -22,6 +22,7 @@ export const CodeSnippet = ({ className, children, active }) => {
     try {
       const content = element[0].children[0].value;
       SetActiveContent(content);
+      console.log(element)
     } catch (error) {
       console.log(error);
     }

@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
 import "./EditArticle.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { PreviewMarkdown } from "../../components/previewMarkdown/PreviewMarkdown.jsx";
+import { useNavigate } from "react-router-dom"
 
 const EditArticle = () => {
   const [title, setTitle] = useState(" ");
@@ -11,8 +12,9 @@ const EditArticle = () => {
   const [description, setDescription] = useState("");
   const [markDown, setMarkDown] = useState("");
 
-  let url = window.location.pathname;
-  let postId = url.split("/")[2];
+  let urlpre = window.location.pathname;
+  let url = urlpre.split("/");
+  let postId = url[url.length-1];
 
   function setArticleValues(data) {
     setTitle(data.title);
@@ -28,7 +30,8 @@ const EditArticle = () => {
     };
     fetchPost();
   }, [postId]);
-
+  
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const update = {
@@ -41,8 +44,9 @@ const EditArticle = () => {
     try {
       await axios
         .put(`/posts/${postId}`, update)
-        .then(window.location.replace(`/post/${postId}`));
-    } catch (err) {
+      navigate(`/xcheldev/post/${postId}`, {replace: true})
+    }
+     catch (err) {
       console.log(err);
     }
   };

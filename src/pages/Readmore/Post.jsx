@@ -5,8 +5,9 @@ import { useState } from "react";
 import "./Post.styles.css";
 import { PreviewMarkdown } from "../../components/previewMarkdown/PreviewMarkdown";
 const Post = () => {
-  let url = window.location.pathname;
-  let PostId = url.slice(6);
+  let urlpre = window.location.pathname;
+  let url = urlpre.split("/");
+  let PostId = url[url.length-1];
 
   const [post, setPost] = useState({});
 

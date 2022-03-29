@@ -15,7 +15,7 @@ const NavBar = () => {
       <Navbar className="navbar" expand="lg">
         <Container>
           <Navbar.Brand>
-            <Link className="link" to="/">
+            <Link className="link" to="/xcheldev">
               <i className="fab fa-mixer fa-lg"></i>
               chel dev
             </Link>
@@ -23,20 +23,20 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav navbarScroll>
-              <Nav.Link as={Link} to="/posts">
+              <Nav.Link as={Link} to="/xcheldev/posts">
                 Posts
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className={`myButton-${classHide}`}
-                to="/newArticle"
+                to="/xcheldev/newArticle"
               >
                 Make a Post
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className={`btn-${classHide}`}
-                to="/"
+                to="/xcheldev"
                 onClick={handleClick}
               >
                 Logout
