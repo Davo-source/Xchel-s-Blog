@@ -5,18 +5,12 @@ import {ContextGlobal} from "../../Estados/Contexto";
 
 import "./login.styles.css";
 
-
 const Login = () => {
-  //POR AHORA NO USAMOS ACTION Y METHOD:POST, NO HAY SERVIDOR
-  //Todo hijo (h1) debe estar dentro de un elemento padre
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-  //const emailRef = useRef();
-  //const passwordRef = useRef();
 
-  const [login, setlogin] = useContext(ContextGlobal);
-
+  const [login, setLogin] = useContext(ContextGlobal);
 
   const handleSumbit = async (event) => {
     event.preventDefault();
@@ -28,7 +22,7 @@ const Login = () => {
 
       });
       console.log(res.data);
-      setlogin(true) 
+      setLogin(true)
     }
     catch(err){
       console.log(err)
@@ -48,9 +42,7 @@ const Login = () => {
             placeholder=" Email... " 
             required
             onChange={(e) => setEmail(e.target.value)}
-            //ref={emailRef}
           />
-       
           <label>Password </label>
           <input
             type="password"
@@ -59,9 +51,7 @@ const Login = () => {
             placeholder=" Password... "
             required
             onChange={(event) => setPassword(event.target.value)}
-            //ref={passwordRef}
           />
-          
           <button type="submit" className="login-button" disabled={login}>Login</button>
         </form>
       </div>

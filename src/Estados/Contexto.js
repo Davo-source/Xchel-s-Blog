@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   state: JSON.parse(localStorage.getItem("login")) || false
 }
 export const UserContext = (props) => {
+
   const [state, setState] = useState(INITIAL_STATE.state);
 
   useEffect(()=> {
