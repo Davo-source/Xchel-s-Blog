@@ -11,6 +11,11 @@ const HomePage = () => {
   const [totalPosts, setTotalPosts] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
+
+  /* La necesidad de isFirstRender es debido a que al ejecutar fetchPosts() y cambiar de componente
+     existe la posibilidad de que ocurra un error debido a que quiere hacer un update de un
+     state que ya no existe (debido a que se cambio el componente actual)
+  */
   const [isFirstRender, setIsFirstRender] = useState(true);
 
   // establece la cantidad de posts en cada paginacion
