@@ -9,13 +9,6 @@
 .content:hover .dropdownMenu {
   display: block;
 }
-
-.dropdown-menu {
-  position: absolute;
-  display: block;
-}
-
-
 .outside{
   margin: 5px 10%;
   border-radius: 10px;
