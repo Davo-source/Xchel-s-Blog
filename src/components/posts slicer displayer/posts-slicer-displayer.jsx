@@ -9,6 +9,7 @@ const PostsDisplayer = ({postOnPage}) => {
         postOnPage?.map(({ _id, title, createdAt, desc, image }) => (
             <div key={_id} className="col">
                 <Card
+                    Id={_id}
                     key={_id}
                     title={title}
                     createdAt={createdAt}

@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
         const postsToDisplay = totalPosts?.slice(0,4);
 
         return (
-            <div className="container-md" >
+            <div className="container-md g-0" >
                 <Carousel
                     fade
                     interval={3000}

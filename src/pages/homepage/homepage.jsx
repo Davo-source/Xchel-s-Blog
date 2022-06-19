@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./homepage.styles.css";
 import axios from "axios";
 import Separator from "../../components/separator/separator";
@@ -6,7 +6,6 @@ import Carrousel from "../../components/carrousel/carrousel";
 import PostsDisplayer from "../../components/posts slicer displayer/posts-slicer-displayer";
 import Paginator from "../../components/paginator/paginator";
 import {Skeleton} from "@mui/material"
-import carrousel from "../../components/carrousel/carrousel";
 
 const HomePage = () => {
   
@@ -53,7 +52,7 @@ const HomePage = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container g-0">
         {totalPosts.length ===0 ? <Skeleton width="100%"
                                             children={<Carrousel/>}/> :
             <Carrousel totalPosts={totalPosts}/>  }
@@ -61,7 +60,7 @@ const HomePage = () => {
           <Separator/>
       </div>
 
-      <div className="container mt-md-5 mt-3">
+      <div className="mt-md-5 mt-3">
         <div className="row row-cols-1 row-cols-md-3">
             <PostsDisplayer postOnPage={postOnPage}/>
         </div>
