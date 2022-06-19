@@ -15,7 +15,7 @@ import {Link} from "react-router-dom";
         return (
                 <Carousel
                     fade
-                    interval={2500}
+                    interval={3000}
                     nextIcon={objetoIcons.nextIcon}
                 prevIcon={objetoIcons.prevIcon}>
                 {postsToDisplay.map(({ title, desc, image, _id }) => (

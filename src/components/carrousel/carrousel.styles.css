@@ -76,12 +76,11 @@
 }
 
 .carousel {
+    margin-top: 5vh;
     position: relative;
     display: flex;
-    width: 75% !important;
+    width: 100% !important;
     height: calc(100vh - 200px);
-    margin-left: 13%;
-    margin-top: 3%;
 }
 .carousel-item {
     justify-content: center;
@@ -91,12 +90,14 @@
     border-radius: 5px;
 }
 .carousel-control-prev {
-    height: 100%;
+    margin-top: 40%;
+    height: 150px;
     width: 50px !important;
     transform: rotate(135deg);
 }
 .carousel-control-next {
-    height: 100%;
+    margin-top: 40%;
+    height: 150px;
     width: 50px !important;
     transform: rotate(-45deg);
 }
