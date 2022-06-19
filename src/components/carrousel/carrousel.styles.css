@@ -1,60 +1,4 @@
-.arrow_carrot-next,
-.arrow_carrot-prev {
-    height: 35px;
-    width: 35px;
-    display: block;
-    border: 4px solid;
-    border-color: #1d95cf;
-    background-color: #35a9e2;
-}
 
-.arrow_carrot-next::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: white;
-    height: 3px;
-    width: 16px;
-    border-radius: 3px;
-    transform: rotate(90deg);
-    right: 12px;
-    margin-top: 19%;
-}
-.arrow_carrot-next::after {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: white;
-    height: 3px;
-    width: 16px;
-    border-radius: 3px;
-    margin-top: 33%;
-    margin-left: 7%;
-}
-
-.arrow_carrot-prev::before {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: white;
-    height: 3px;
-    width: 16px;
-    border-radius: 3px;
-    transform: rotate(90deg);
-    right: 12px;
-    margin-top: 19%;
-}
-.arrow_carrot-prev::after {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: white;
-    height: 3px;
-    width: 16px;
-    border-radius: 3px;
-    margin-top: 33%;
-    margin-left: 7%;
-}
 .image-resize {
     overflow: hidden;
     display: flex;
@@ -89,18 +33,7 @@
     background-color: black;
     border-radius: 5px;
 }
-.carousel-control-prev {
-    margin-top: 40%;
-    height: 150px;
-    width: 50px !important;
-    transform: rotate(135deg);
-}
-.carousel-control-next {
-    margin-top: 40%;
-    height: 150px;
-    width: 50px !important;
-    transform: rotate(-45deg);
-}
+
 @keyframes scaleTitle {
     100% {
         color: rgba(255, 255, 255, 0.9);
