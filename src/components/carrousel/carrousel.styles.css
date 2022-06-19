@@ -23,7 +23,7 @@
     margin-top: 5vh;
     position: relative;
     display: flex;
-    width: 100% !important;
+    width: 100%;
     height: calc(100vh - 200px);
 }
 .carousel-item {
@@ -31,7 +31,6 @@
     width: 100% !important;
     height: 100%;
     background-color: black;
-    border-radius: 5px;
 }
 
 @keyframes scaleTitle {

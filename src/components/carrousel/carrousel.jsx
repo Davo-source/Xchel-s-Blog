@@ -8,23 +8,26 @@ import {Link} from "react-router-dom";
         const postsToDisplay = totalPosts.slice(0,4);
 
         return (
+            <div className="container-md" >
                 <Carousel
                     fade
                     interval={3000}
-                    >
-                {postsToDisplay.map(({ title, desc, image, _id }) => (
-                    <Carousel.Item key={_id}>
-                        <img className="image-resize" src={image} alt="slide show" />
+                >
+                    {postsToDisplay.map(({ title, desc, image, _id }) => (
+                        <Carousel.Item key={_id}>
+                            <img className="image-resize" src={image} alt="slide show" />
 
-                        <Carousel.Caption>
-                            <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
-                                <h2 className="title-card">{title}</h2>
-                            </Link>
-                            <p>{desc}</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                ))}
-            </Carousel>
+                            <Carousel.Caption>
+                                <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
+                                    <h2 className="title-card">{title}</h2>
+                                </Link>
+                                <p>{desc}</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
+            </div>
+
     );
 };
 
