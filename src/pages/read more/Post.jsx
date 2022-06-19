@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./Post.styles.css";
-import { PreviewMarkdown } from "../../components/previewMarkdown/PreviewMarkdown";
+import { PreviewMarkdown } from "../../components/preview markdown/PreviewMarkdown";
 const Post = () => {
   let urlpre = window.location.pathname;
   let url = urlpre.split("/");

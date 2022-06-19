@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import darkStyle from "../CodeSnippet/darkStyle";
+import darkStyle from "./darkStyle";
 import "./codesnippet.css";
 
 export const CodeSnippet = ({ className, children, active }) => {

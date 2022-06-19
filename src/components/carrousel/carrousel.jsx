@@ -1,7 +1,8 @@
 import { Carousel } from "react-bootstrap";
 import { Fragment } from "react";
+import "./carrousel.styles.css"
 
-const Carrusel = ({title, desc, image}) => {
+const Carrousel = ({title, desc, image}) => {
     return(
         <Fragment>
         <Carousel.Item>
@@ -19,4 +20,4 @@ const Carrusel = ({title, desc, image}) => {
     )
 }
 
-export default Carrusel;
+export default Carrousel;

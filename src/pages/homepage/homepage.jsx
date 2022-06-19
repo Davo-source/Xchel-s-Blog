@@ -7,6 +7,7 @@ import axios from "axios";
 import { Carousel } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
+import Separator from "../../components/separator/separator";
 
 const HomePage = () => {
   
@@ -19,16 +20,17 @@ const HomePage = () => {
     prevIcon: <span className="arrow_carrot-prev"></span>,
   };
 
-
-  const postsPerPage = 12; // establece la cantidad de posts en cada paginacion
+// establece la cantidad de posts en cada paginacion
+  const postsPerPage = 6;
 
   const fetchPosts = async () => {
     const resp = await axios.get(`/posts`);
     setTotalPosts(resp.data);
   };
 
+//establecemos el indice del post actual de acuerdo a la paginacion
   const handlePage = (e) => {
-    setCurrentPostIndex(e.selected * postsPerPage); //establecemos el indice del post actual de acuerdo a la paginacion
+    setCurrentPostIndex(e.selected * postsPerPage);
   };
 
   const postOnPage = totalPosts.slice(
@@ -69,7 +71,7 @@ const HomePage = () => {
               <img className="image-resize" src={image} alt="slide show" />
 
               <Carousel.Caption>
-                <Link to={`/xcheldev/post/${_id}`} style={{ textDecoration: "none" }}>
+                <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
                   <h2 className="title-card">{title}</h2>
                 </Link>
                 <p>{desc}</p>
@@ -97,10 +99,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <PostCarruselFirstPage />
-
-      <div className="separador mt-5">
-        <i className="far fa-list-alt"></i>
-      </div>
+      <Separator/>
       <div className="box">
         <PostsSlicerDisplayer />
       </div>
@@ -122,7 +121,6 @@ const HomePage = () => {
         disabledClassName="inactivo-number"
       />
       </div>
-      <div>Foot</div>
     </Fragment>
   );
 };

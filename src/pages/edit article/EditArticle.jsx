@@ -3,7 +3,7 @@ import { useState} from "react";
 import "./EditArticle.css";
 import axios from "axios";
 import { useEffect } from "react";
-import { PreviewMarkdown } from "../../components/previewMarkdown/PreviewMarkdown.jsx";
+import { PreviewMarkdown } from "../../components/preview markdown/PreviewMarkdown.jsx";
 import { useNavigate } from "react-router-dom"
 
 const EditArticle = () => {

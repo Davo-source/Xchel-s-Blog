@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import "./previewmarkdown.css";
-import { CodeSnippet } from "../CodeSnippet/CodeSnippet";
+import { CodeSnippet } from "../code snippet/CodeSnippet";
 
 const PreviewMarkdown = ({ markdownText }) => {
   return (

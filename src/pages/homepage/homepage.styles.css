@@ -128,32 +128,7 @@
   font-family: "Ramaraja", serif;
   font-weight: 900;
 }
-.android {
-  font-family: "Ramaraja", serif;
-  font-weight: 900;
-}
-.separador {
-  display: flex;
-  justify-content: center;
-}
-.separador::after {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 10px;
-  width: 35vw;
-  left: 52%;
-  border-bottom: 1px solid #1390da;
-}
-.separador::before {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 10px;
-  width: 35vw;
-  right: 52%;
-  border-bottom: 1px solid #1390da;
-}
+
 .paginate-container > ul{
   display: flex;
   justify-content: center;
