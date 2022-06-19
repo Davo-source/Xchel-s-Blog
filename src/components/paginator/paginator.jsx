@@ -2,7 +2,7 @@ import "./paginator.styles.css"
 import ReactPaginate from "react-paginate";
 import React from "react";
 
-const Paginator = ({onPageChange: handlePage,pageCount}) => {
+const Paginator = ({onPageChange: handlePage,pageCount,refToScroll}) => {
 
     return (
         <div className= "paginate-container">
@@ -11,8 +11,8 @@ const Paginator = ({onPageChange: handlePage,pageCount}) => {
             nextLabel=" "
             onPageChange={handlePage}
             onClick={() => (window.scrollTo({
-                top: 0,
-                left: 0,
+                top: refToScroll.current.offsetTop,
+                left: refToScroll.current.offsetLeft,
                 behavior: 'smooth'
                 }))}
             pageCount={pageCount}

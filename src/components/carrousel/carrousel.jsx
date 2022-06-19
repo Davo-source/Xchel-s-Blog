@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
     const Carrousel = ({totalPosts}) => {
 
-        const postsToDisplay = totalPosts.slice(0,4);
+        const postsToDisplay = totalPosts?.slice(0,4);
 
         return (
             <div className="container-md" >
@@ -13,7 +13,7 @@ import {Link} from "react-router-dom";
                     fade
                     interval={3000}
                 >
-                    {postsToDisplay.map(({ title, desc, image, _id }) => (
+                    {postsToDisplay?.map(({ title, desc, image, _id }) => (
                         <Carousel.Item key={_id}>
                             <img className="image-resize" src={image} alt="slide show" />
 

@@ -6,15 +6,17 @@ import React from "react";
 const PostsDisplayer = ({postOnPage}) => {
     return (
         postOnPage &&
-        postOnPage.map(({ _id, title, createdAt, desc, image }) => (
-            <Card
-                Id={_id}
-                key={_id}
-                title={title}
-                createdAt={createdAt}
-                desc={desc}
-                image={image}
-            />
+        postOnPage?.map(({ _id, title, createdAt, desc, image }) => (
+            <div key={_id} className="col">
+                <Card
+                    key={_id}
+                    title={title}
+                    createdAt={createdAt}
+                    desc={desc}
+                    image={image}
+                />
+            </div>
+
         ))
     );
 };

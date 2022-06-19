@@ -1,10 +1,1 @@
 @import url("https://fonts.googleapis.com/css2?family=Ramaraja&family=Oswald:wght@700&display=swap");
-.box {
-  margin: 15vw;
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  column-gap: 20px;
-  row-gap: 15px;
-  justify-content: center;
-}
