@@ -91,16 +91,14 @@
     border-radius: 5px;
 }
 .carousel-control-prev {
-    height: 20px;
+    height: 100%;
     width: 50px !important;
     transform: rotate(135deg);
-    margin-top: 20%;
 }
 .carousel-control-next {
-    height: 20px;
+    height: 100%;
     width: 50px !important;
     transform: rotate(-45deg);
-    margin-top: 20%;
 }
 @keyframes scaleTitle {
     100% {
