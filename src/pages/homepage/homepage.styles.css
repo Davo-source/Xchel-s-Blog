@@ -1,1 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ramaraja&family=Oswald:wght@700&display=swap");
+
+.posts{
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    border-radius: 15px;
+}
+@media only screen and (max-width: 1000px) {
+    .posts {
+        border: none;
+    }
+}

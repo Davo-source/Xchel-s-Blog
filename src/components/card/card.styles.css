@@ -1,69 +1,12 @@
-
-.headerCard {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
+.card-content{
+    height: 100%;
+    width: 100%;
+    max-height: 500px;
+    box-shadow: none !important;
+    background-color: #f8f9fa !important;
 }
-
-.content:hover .dropdownMenu {
-  display: block;
-}
-.outside{
-  margin: 5px 10%;
-  border-radius: 10px;
-  box-shadow: 0px 1px 15px 1px #2d33883d;
-  height: 80vh;
-  min-height: 35rem;
-  overflow: hidden;
-  transition-property: box-shadow, opacity, transform;
-  transition-duration: .3s; 
-}
-.image-border, .image-border:hover{
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  background-size: 100% 100%;
-  overflow: hidden;
-  object-fit: cover;
-  object-position: center center;
-  margin: 0;
-  height: 45%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.content{
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-.card-text{
-  text-align: left !important;
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.link-cards{
-  text-decoration: none;
-  color: black;
-}
-.link-cards:hover{
-  color: black;
-}
-.outside:hover{
-  box-shadow: 1xp 1px 18px 8px;
-  transform: scale(0.9) scale(1.13);
-  opacity: 89%;
-  overflow: visible;
-  border-radius: 10px;
-}
-
-.sub-content{
-  overflow: hidden;
-  background-color: #fff;
+@media only screen and (max-width: 1000px) {
+    .card-content {
+        min-height: 400px;
+    }
 }

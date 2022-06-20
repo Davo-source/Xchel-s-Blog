@@ -5,7 +5,7 @@ import React from "react";
 const Paginator = ({onPageChange: handlePage,pageCount,refToScroll}) => {
 
     return (
-        <div className= "paginate-container">
+        <div className= "paginate-container mt-5">
             <ReactPaginate
                 breakLabel="..."
             nextLabel=" "

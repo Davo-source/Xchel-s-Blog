@@ -7,7 +7,7 @@ const PostsDisplayer = ({postOnPage}) => {
     return (
         postOnPage &&
         postOnPage?.map(({ _id, title, createdAt, desc, image }) => (
-            <div key={_id} className="col">
+            <div key={_id} className="col mb-5">
                 <Card
                     Id={_id}
                     key={_id}

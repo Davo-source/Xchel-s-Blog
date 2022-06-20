@@ -60,8 +60,8 @@ const HomePage = () => {
           <Separator/>
       </div>
 
-      <div className="mt-md-5 mt-3">
-        <div className="row row-cols-1 row-cols-md-3">
+      <div className="container posts mt-4 mt-md-5 p-0 p-lg-5">
+        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-5">
             <PostsDisplayer postOnPage={postOnPage}/>
         </div>
       </div>
