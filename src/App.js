@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes,Navigate } from "react-router-dom";
 import React, { useContext } from "react";
 import "./App.css";
 import NavBar from "./components/navbar/navbar";
@@ -9,6 +9,8 @@ import Post from "./pages/read more/Post";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ContextGlobal } from "./Estados/Contexto";
 import EditArticle from "./pages/edit article/EditArticle";
+import Footer from "./components/footer/footer";
+import {PATH} from "./utils/pathURL";
 
 function App() {
   const [login] = useContext(ContextGlobal);
@@ -17,25 +19,29 @@ function App() {
     <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path={`/${PATH.URL}`} element={<HomePage />} />
         <Route
-          path="/xcheladmin"
+          path={`/${PATH.URL}/xcheladmin`}
           element={login ? <HomePage /> : <Login />}
         />
         <Route
-          path="/newArticle"
+          path={`/${PATH.URL}/newArticle`}
           element={login ? <NewArticle /> : <HomePage />}
         />
 
         <Route
-          path="/editArticle/:id"
+          path={`/${PATH.URL}/editArticle/:id`}
           element={login ? <EditArticle /> : <HomePage />}
         />
 
-        <Route path="/posts" element={<HomePage />} />
+        <Route path={`/${PATH.URL}/posts`} element={<HomePage />} />
 
-        <Route path="/post/:id" element={<Post />} />
+        <Route path={`/${PATH.URL}/post/:id`} element={<Post />} />
+
+        <Route path="*" element={<Navigate to={`/${PATH.URL}`} replace />} />
+
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

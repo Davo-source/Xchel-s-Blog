@@ -8,7 +8,7 @@ import "animate.css"
         const postsToDisplay = totalPosts?.slice(0,4);
 
         return (
-            <div className="container-md g-0 animate__animated animate__zoomIn" >
+            <div className=" carousel g-0 animate__animated animate__zoomIn" >
                 <Carousel
                     fade
                     interval={3000}

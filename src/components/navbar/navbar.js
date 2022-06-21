@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ContextGlobal } from "../../Estados/Contexto";
 import "./navbar.styles.css";
+import {PATH} from "../../utils/pathURL";
 
 const NavBar = () => {
   const [login, setlogin] = useContext(ContextGlobal);
@@ -15,7 +16,7 @@ const NavBar = () => {
       <Navbar className="navbar" expand="lg">
         <Container>
           <Navbar.Brand>
-            <Link className="link" to="/">
+            <Link className="link" to={`/${PATH.URL}`}>
               <i className="fab fa-mixer fa-lg"></i>
               chel dev
             </Link>
@@ -23,20 +24,20 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav navbarScroll>
-              <Nav.Link as={Link} to="/posts">
+              <Nav.Link as={Link} to={`/${PATH.URL}/posts`}>
                 Posts
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className={`myButton-${classHide}`}
-                to="/newArticle"
+                to={`/${PATH.URL}/newArticle`}
               >
                 Make a Post
               </Nav.Link>
               <Nav.Link
                 as={Link}
                 className={`btn-${classHide}`}
-                to="/"
+                to={`/${PATH.URL}`}
                 onClick={handleClick}
               >
                 Logout
