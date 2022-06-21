@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { PreviewMarkdown } from "../../components/preview markdown/PreviewMarkdown.jsx";
 import { useNavigate } from "react-router-dom"
+import {PATH} from "../../utils/pathURL";
 
 const EditArticle = () => {
   const [title, setTitle] = useState(" ");
@@ -44,7 +45,7 @@ const EditArticle = () => {
     try {
       await axios
         .put(`/posts/${postId}`, update)
-      navigate(`/xcheldev/post/${postId}`, {replace: true})
+      navigate(`/${PATH.URL}/post/${postId}`, {replace: true})
     }
      catch (err) {
       console.log(err);

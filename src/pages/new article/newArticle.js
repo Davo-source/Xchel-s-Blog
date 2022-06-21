@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./newarticle.css";
 import axios from "axios";
+import {PATH} from "../../utils/pathURL";
 
 const NewArticle = () => {
   const [title, setTitle] = useState();
@@ -18,7 +19,7 @@ const NewArticle = () => {
         description,
         markDown,
       });
-      window.location.replace("/post/" + res.data._id);
+      window.location.replace(`${PATH.URL}/post/` + res.data._id);
     } catch (err) {
       console.log(err);
     }
