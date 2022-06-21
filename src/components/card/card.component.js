@@ -4,6 +4,7 @@ import {ContextGlobal} from "../../Estados/Contexto";
 import ModalDeleteDialog from "../modal delete dialog/modal-delete-dialog";
 import ThreeDotMenu from "./tree dot menu/three-dot-menu";
 import {Card, CardMedia} from "@mui/material"
+import "animate.css"
 
 const CardComponent = ({Id,title,desc,createdAt,image}) => {
   const [dropdown, setDropdown] = useState(false);
@@ -16,7 +17,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
   return (
     <Fragment>
         <ModalDeleteDialog postId={postId}/>
-        <Card className="card-content">
+        <Card className="card-content animate__animated animate__fadeIn">
                 <CardMedia
                     component="img"
                     height="200"

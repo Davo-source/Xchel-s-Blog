@@ -6,7 +6,7 @@ import Carrousel from "../../components/carrousel/carrousel";
 import PostsDisplayer from "../../components/posts slicer displayer/posts-slicer-displayer";
 import Paginator from "../../components/paginator/paginator";
 import {Skeleton} from "@mui/material"
-
+import "animate.css";
 const HomePage = () => {
   
   const [totalPosts, setTotalPosts] = useState([]);
@@ -53,6 +53,7 @@ const HomePage = () => {
 
   return (
     <div className="container g-0">
+
         {totalPosts.length ===0 ? <Skeleton width="100%"
                                             children={<Carrousel/>}/> :
             <Carrousel totalPosts={totalPosts}/>  }

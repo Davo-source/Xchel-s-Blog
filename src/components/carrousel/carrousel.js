@@ -2,13 +2,13 @@ import { Carousel } from "react-bootstrap";
 import React, { Fragment } from "react";
 import "./carrousel.styles.css"
 import {Link} from "react-router-dom";
-
+import "animate.css"
     const Carrousel = ({totalPosts}) => {
 
         const postsToDisplay = totalPosts?.slice(0,4);
 
         return (
-            <div className="container-md g-0" >
+            <div className="container-md g-0 animate__animated animate__zoomIn" >
                 <Carousel
                     fade
                     interval={3000}

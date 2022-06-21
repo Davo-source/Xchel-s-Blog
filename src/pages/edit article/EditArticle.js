@@ -109,7 +109,7 @@ const EditArticle = () => {
           </form>
         </div>
 
-        <div className="preview col-12 col-md-6 p-5">
+        <div className="preview col-12 col-md-6 p-3">
           <PreviewMarkdown markdownText={markDown}></PreviewMarkdown>
         </div>
       </div>
