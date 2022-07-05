@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ContextGlobal } from "./Estados/Contexto";
 import EditArticle from "./pages/edit article/EditArticle";
 import Footer from "./components/footer/footer";
-import {PATH} from "./utils/pathURL";
+import ErrorPage from "./pages/error page/error-page";
 
 function App() {
   const [login] = useContext(ContextGlobal);
@@ -19,26 +19,28 @@ function App() {
     <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
-        <Route path={`/${PATH.URL}`} element={<HomePage />} />
+        <Route path={`/`} element={<HomePage />} />
         <Route
-          path={`/${PATH.URL}/xcheladmin`}
+          path={`/xcheladmin`}
           element={login ? <HomePage /> : <Login />}
         />
         <Route
-          path={`/${PATH.URL}/newArticle`}
+          path={`/newArticle`}
           element={login ? <NewArticle /> : <HomePage />}
         />
 
         <Route
-          path={`/${PATH.URL}/editArticle/:id`}
+          path={`/editArticle/:id`}
           element={login ? <EditArticle /> : <HomePage />}
         />
 
-        <Route path={`/${PATH.URL}/posts`} element={<HomePage />} />
+        <Route path={`/posts`} element={<HomePage />} />
 
-        <Route path={`/${PATH.URL}/post/:id`} element={<Post />} />
+        <Route path={`/post/:id`} element={<Post />} />
 
-        <Route path="*" element={<Navigate to={`/${PATH.URL}`} replace />} />
+          <Route path={`/errorPage`} element={<ErrorPage />} />
+
+        <Route path="*" element={<Navigate to="/errorPage" replace />} />
 
       </Routes>
       <Footer/>

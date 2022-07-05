@@ -2,7 +2,6 @@ import React from "react"
 import {useNavigate} from "react-router-dom"
 import {IconButton} from "@mui/material";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {PATH} from "../../../utils/pathURL";
 
 
 const ThreeDotMenu = ({dropdown,postId,login,toggle}) => {
@@ -10,7 +9,7 @@ const ThreeDotMenu = ({dropdown,postId,login,toggle}) => {
         let navigate = useNavigate();
 
         const handleEdit = () => {
-            navigate(`/${PATH.URL}/editArticle/${postId}`);
+            navigate(`/editArticle/${postId}`);
         };
 
         return (
