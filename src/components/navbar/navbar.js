@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { ContextGlobal } from "../../Estados/Contexto";
+import React, {useContext} from "react";
+import {Container, Nav, Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import {ContextGlobal} from "../../Estados/Contexto";
 import "./navbar.styles.css";
-import {PATH} from "../../utils/pathURL";
 
 const NavBar = () => {
   const [login, setlogin] = useContext(ContextGlobal);
@@ -17,7 +16,7 @@ const NavBar = () => {
         <Container>
           <Navbar.Brand>
             <Link className="link" to={`/`}>
-              <i className="fab fa-mixer fa-lg"></i>
+              <i className="fab fa-mixer fa-lg"/>
               chel dev
             </Link>
           </Navbar.Brand>

@@ -1,8 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 import "./newarticle.css";
 import axios from "axios";
-import {PATH} from "../../utils/pathURL";
 
 const NewArticle = () => {
   const [title, setTitle] = useState();
@@ -91,7 +89,7 @@ const NewArticle = () => {
               );
             }}
             onInput={(e) => e.target.setCustomValidity("")}
-          ></textarea>
+          />
         </div>
         <button type="submit" className="btn btn-primary col-12 col-md-3 mt-4">
           Post
