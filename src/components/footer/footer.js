@@ -5,7 +5,7 @@ import "./footer.css"
 
     return (
         <footer>
-
+            Footer
         </footer>
     )
     }

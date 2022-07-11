@@ -71,15 +71,6 @@ const Login = () => {
                       <pre>{error}</pre>
                     </div>
                     <button type="submit" className="mt-4 btn btn-outline-light btn-lg px-5 button-disabled" disabled={login}>Login</button>
-                    
-                    <div className="d-flex justify-content-center tesxt-center mt-4 pt-1">
-                      <a href="https://www.facebook.com/davidalejandro.oramasavila" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
-                      <a href=
-                      "https://www.google.com/search?q=osos+maduros&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiAyqrqxr74AhXtK0QIHeHtCQYQ_AUoAXoECAEQAw&biw=1280&bih=609&dpr=1.5"
-                      className="text-white"><i className="fab fa-google fa-lg mx-4 px-2"></i></a>
-                      <a href="#!" className="text-white"><i className="fab fa-twitter fa-lg"></i></a>
-                    </div>
-
                   </form>
                 </div>  
               </div>
