@@ -8,12 +8,10 @@ import "animate.css"
 import {useNavigate} from "react-router-dom";
 
 const CardComponent = ({Id,title,desc,createdAt,image}) => {
-  const [dropdown, setDropdown] = useState(false);
   const [postId] = useState(Id);
   const [login] = useContext(ContextGlobal);
   const options = {year: 'numeric', month: 'long', day: 'numeric'}
   let navigate = useNavigate();
-  const toggle = () => setDropdown(!dropdown);
     const handleClick = () => {
         navigate(`/post/${postId}`)
     };
@@ -25,9 +23,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
                 className="card-media"
                 style={{background: `url(${image})`}}>
                 <div className="dot-menu d-flex justify-content-end">
-                    <ThreeDotMenu toggle={toggle}
-                                  login={login}
-                                  dropdown={dropdown}
+                    <ThreeDotMenu login={login}
                                   postId={postId}/>
                 </div>
                 <div className="clickable" onClick={() => handleClick()}/>
