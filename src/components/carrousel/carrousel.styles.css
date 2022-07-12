@@ -11,8 +11,9 @@
 }
 .title-card {
     color: white;
-    font: bolder;
-    font-family: "Oswald", sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
     text-shadow: 0px 1px 2px #676767;
 }
 .title-card:hover {

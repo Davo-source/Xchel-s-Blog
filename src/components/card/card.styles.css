@@ -1,3 +1,30 @@
+.title-home-card{
+    font-family: 'Noto Sans', sans-serif;
+    color: #073042;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.3em;
+    cursor: pointer;
+}
+.title-home-card:hover{
+    color: #1769e0;
+}
+.date-home-card{
+    font-family: 'Noto Sans', sans-serif;
+    color: #073042;
+    font-size: 20px;
+    line-height: 1em;
+    font-weight: 400;
+}
+.description-home-card{
+    font-family: 'Noto Sans', sans-serif;
+    color: #202124;
+    font-size: 20px;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: justify;
+    text-justify: inter-word;
+}
 .card-content{
     height: 100%;
     width: 100%;
@@ -5,6 +32,14 @@
     box-shadow: none !important;
     background-color: #f8f9fa !important;
 }
+.card-media{
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.card-media:hover{
+   opacity: 0.6;
+}
+
 @media only screen and (max-width: 1000px) {
     .card-content {
         min-height: 400px;

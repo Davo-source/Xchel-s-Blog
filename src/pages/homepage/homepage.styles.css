@@ -2,8 +2,7 @@
 
 .posts{
     background-color: #f8f9fa;
-    border: 1px solid #dadce0;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 @media only screen and (max-width: 1000px) {
     .posts {
