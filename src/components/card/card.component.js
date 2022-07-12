@@ -28,7 +28,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
                 </div>
                 <div className="clickable" onClick={() => handleClick()}/>
             </div>
-            <div className="p-md-1 p-lg-4">
+            <div className="p-3 p-lg-4">
                 <div className="d-flex">
 
                     <div onClick={() => handleClick()}
@@ -38,11 +38,11 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
 
                 </div>
 
-                <div className="p-2">
+                <div>
                     <span className="date-home-card">{new Date(createdAt).toLocaleDateString('es-ES', options)}</span>
                 </div>
 
-                <div className="description-home-card p-2">
+                <div className="description-home-card">
                     <p>
                         {desc}
                     </p>
