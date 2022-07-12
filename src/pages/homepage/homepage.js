@@ -62,7 +62,7 @@ const HomePage = () => {
       </div>
 
       <div className="container posts mt-4 mt-md-5 p-0 p-lg-5">
-        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-5">
+        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-5 g-0">
             <PostsDisplayer postOnPage={postOnPage}/>
         </div>
       </div>

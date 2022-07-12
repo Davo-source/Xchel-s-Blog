@@ -21,21 +21,18 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
     <Fragment>
         <ModalDeleteDialog postId={postId}/>
         <Card className="card-content animate__animated animate__fadeIn">
-                <CardMedia
-                    className="card-media"
-                    onClick={() => handleClick()}
-                    component="img"
-                    height="200"
-                    image={image}
-                    alt={title}/>
-        <div className="row">
-            <div className={login ? "col-1 mt-2" : ""}>
-                <ThreeDotMenu toggle={toggle}
-                              login={login}
-                              dropdown={dropdown}
-                              postId={postId}/>
+            <div
+                className="card-media"
+                style={{background: `url(${image})`}}>
+                <div className="dot-menu d-flex justify-content-end">
+                    <ThreeDotMenu toggle={toggle}
+                                  login={login}
+                                  dropdown={dropdown}
+                                  postId={postId}/>
+                </div>
+                <div className="clickable" onClick={() => handleClick()}/>
             </div>
-            <div className="col">
+            <div className="p-md-1 p-lg-4">
                 <div className="d-flex">
 
                     <div onClick={() => handleClick()}
@@ -55,7 +52,6 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
                     </p>
                 </div>
             </div>
-        </div>
         </Card>
     </Fragment>
   );

@@ -1,8 +1,7 @@
 import React from "react"
 import {useNavigate} from "react-router-dom"
 import {IconButton} from "@mui/material";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const ThreeDotMenu = ({dropdown,postId,login,toggle}) => {
 
@@ -13,17 +12,17 @@ const ThreeDotMenu = ({dropdown,postId,login,toggle}) => {
         };
 
         return (
-            <div className={`dropdownMenu ${login ? "" : "hide"}`}>
+            <div className={`${login ? "" : "hide"}`}>
                 <IconButton onClick={toggle} aria-label="settings">
-                    <MoreVertIcon></MoreVertIcon>
+                    <MoreHorizIcon/>
                 </IconButton>
-                <div className={`dropdown-menu ${dropdown ? "show" : ""}`}>
+                <div className={`dropdown-menu ${dropdown ? "show" : "hide"}`}>
                     <button
                         onClick={handleEdit}
                         type="button"
                         className="dropdown-item"
                     >
-                        <i className="fa-solid fa-pen-to-square"></i> Edit
+                        <i className="fa-solid fa-pen-to-square"/> Edit
                     </button>
                     <button
                         data-bs-toggle="modal"
@@ -31,7 +30,7 @@ const ThreeDotMenu = ({dropdown,postId,login,toggle}) => {
                         type="button"
                         className="dropdown-item"
                     >
-                        <i className="fa-solid fa-trash-can"></i> Delete
+                        <i className="fa-solid fa-trash-can"/> Delete
                     </button>
                 </div>
             </div>
