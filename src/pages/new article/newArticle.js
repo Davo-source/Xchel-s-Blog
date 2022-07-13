@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import "./newarticle.css";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 const NewArticle = () => {
   const [title, setTitle] = useState();
   const [imageURL, setImageURL] = useState();
   const [description, setDescription] = useState();
   const [markDown, setMarkDown] = useState();
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const NewArticle = () => {
         description,
         markDown,
       });
-      window.location.replace(`/post/` + res.data._id);
+      navigate(`/post/` + res.data._id);
     } catch (err) {
       console.log(err);
     }
