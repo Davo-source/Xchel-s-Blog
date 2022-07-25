@@ -3,7 +3,7 @@ import "./card.styles.css";
 import {ContextGlobal} from "../../Estados/Contexto";
 import ModalDeleteDialog from "../modal delete dialog/modal-delete-dialog";
 import ThreeDotMenu from "./tree dot menu/three-dot-menu";
-import {Card, CardMedia} from "@mui/material"
+import {Card} from "@mui/material"
 import "animate.css"
 import {useNavigate} from "react-router-dom";
 
@@ -32,7 +32,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
                 <div className="d-flex">
 
                     <div onClick={() => handleClick()}
-                         className="title-home-card p-2 align-content-center">
+                         className="title-home-card p-0 align-content-center">
                         {title}
                     </div>
 
