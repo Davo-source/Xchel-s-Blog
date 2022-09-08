@@ -30,3 +30,19 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+@media only screen and (max-width: 600px) {
+
+  div .p-5 {
+    padding: 0 !important;
+  }
+  .markdown{
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .snippet {
+    max-width: 100% !important;
+    margin-left: 1rem !important;
+    margin-right: 2rem !important;
+  }
+}
