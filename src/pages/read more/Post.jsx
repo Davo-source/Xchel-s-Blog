@@ -21,7 +21,7 @@ const Post = () => {
   }, [PostId]);
 
   return (
-    <div className="all p-5">
+    <div className="Post p-5">
       <div className="Container">
         <div className="Image-container">
           <img src={post.image} className="Image" alt="imagen" />

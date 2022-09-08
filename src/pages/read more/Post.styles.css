@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 600px) {
 
-  div .p-5 {
+  .Post.p-5 {
     padding: 0 !important;
   }
   .markdown{
