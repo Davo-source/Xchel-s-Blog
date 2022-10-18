@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./newarticle.css";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import {PreviewMarkdown} from "../../components/preview markdown/PreviewMarkdown";
 
 const NewArticle = () => {
   const [title, setTitle] = useState();
@@ -26,12 +27,14 @@ const NewArticle = () => {
   };
 
   return (
-    <div className="container-md">
-      <form className="p-4" onSubmit={handleSubmit}>
-        <div className="row ">
-          <div className="form-group col-12 col-md-6">
-            <h5>Title</h5>
-            <input
+    <div className="container-md mt-4">
+      <div className="row">
+        <div className="col">
+          <form className="p-4" onSubmit={handleSubmit}>
+          <div className="row ">
+            <div className="form-group col-12 col-md-6">
+             <h5>Title</h5>
+             <input
               type="text"
               className="form-control mt-2 mb-3 "
               id="formGroupExampleInput"
@@ -43,10 +46,10 @@ const NewArticle = () => {
               }}
               onInput={(e) => e.target.setCustomValidity("")}
             />
-          </div>
-          <div className="form-group col-12 col-md-6">
-            <h5>Image</h5>
-            <input
+           </div>
+           <div className="form-group col-12 col-md-6">
+              <h5>Image</h5>
+              <input
               type="url"
               className="form-control mt-2 mb-3"
               id="formGroupExampleInput2"
@@ -56,12 +59,12 @@ const NewArticle = () => {
                 e.target.setCustomValidity("Introduce un URL válida");
               }}
               onInput={(e) => e.target.setCustomValidity("")}
-            />
-          </div>
-        </div>
-        <div className="form-group">
-          <h5>Resume</h5>
-          <input
+              />
+           </div>
+         </div>
+         <div className="form-group">
+           <h5>Resume</h5>
+            <input
             type="text"
             className="form-control mt-2 mb-3"
             id="formGroupExampleInput4"
@@ -72,12 +75,12 @@ const NewArticle = () => {
               e.target.setCustomValidity("Introduce una descripción breve");
             }}
             onInput={(e) => e.target.setCustomValidity("")}
-          />
-        </div>
+           />
+          </div>
 
-        <div className="form-group">
-          <h5>Markdown content</h5>
-          <textarea
+         <div className="form-group">
+            <h5>Markdown content</h5>
+            <textarea
             className="form-control mt-2 mb-3"
             id="textArea"
             rows="8"
@@ -90,13 +93,18 @@ const NewArticle = () => {
               );
             }}
             onInput={(e) => e.target.setCustomValidity("")}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary col-12 col-md-3 mt-4">
+            />
+          </div>
+         <button type="submit" className="btn btn-primary col-12 col-md-3 mt-4">
           Post
-        </button>
-      </form>
-    </div>
+          </button>
+        </form>
+        </div>
+         <div className="preview col-12 col-md-6 p-3">
+           <PreviewMarkdown markdownText={markDown}></PreviewMarkdown>
+         </div>
+       </div>
+     </div>
   );
 };
 
