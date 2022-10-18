@@ -52,7 +52,6 @@ const NewArticle = () => {
               id="formGroupExampleInput2"
               placeholder="coloca la imagen URL de tu articulo"
               onChange={(e) => setImageURL(e.target.value)}
-              required
               onInvalid={(e) => {
                 e.target.setCustomValidity("Introduce un URL válida");
               }}

@@ -15,8 +15,7 @@ import "animate.css"
                 >
                     {postsToDisplay?.map(({ title, desc, image, _id }) => (
                         <Carousel.Item key={_id}>
-                            <img className="image-resize" src={image} alt="slide show" />
-
+                            {image && <img className="image-resize" src={image} alt="slide show" />}
                             <Carousel.Caption>
                                 <Link to={`/post/${_id}`}  style={{ textDecoration: "none" }}>
                                     <h2 className="title-card mb-5">{title}</h2>

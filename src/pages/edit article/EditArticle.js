@@ -76,7 +76,6 @@ const EditArticle = () => {
                   id="formGroupExampleInput2"
                   value={imageURL}
                   onChange={(e) => setImageURL(e.target.value)}
-                  required
                 />
               </div>
             </div>

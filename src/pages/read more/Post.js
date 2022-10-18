@@ -8,7 +8,7 @@ const Post = () => {
   let urlpre = window.location.pathname;
   let url = urlpre.split("/");
   let PostId = url[url.length-1];
-
+  const options = {year: 'numeric', month: 'long', day: 'numeric'}
   const [post, setPost] = useState({});
 
   useEffect(() => {
@@ -21,13 +21,14 @@ const Post = () => {
   }, [PostId]);
 
   return (
-    <div className="Post p-5">
+    <div className="Post p-0 p-lg-5 mt-5">
       <div className="Container">
         <div className="Image-container">
-          <img src={post.image} className="Image" alt="imagen" />
+          { post.image && <img src={post.image} className="Image" alt="imagen" /> }
         </div>
         <div className="title">
           <h1>{post.title}</h1>
+          <p>{post.createdAt && new Date(post.createdAt).toLocaleDateString('es-ES', options)}</p>
           <p>{post.desc}</p>
         </div>
       </div>
