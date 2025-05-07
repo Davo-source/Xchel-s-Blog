@@ -9,7 +9,7 @@
     height: 10px;
     width: 35vw;
     left: 52%;
-    border-bottom: 1px solid #1390da;
+    border-bottom: 1px solid #bbbbbb;
 }
 .separador::before {
     content: "";
@@ -18,5 +18,5 @@
     height: 10px;
     width: 35vw;
     right: 52%;
-    border-bottom: 1px solid #1390da;
+    border-bottom: 1px solid #bbbbbb;
 }

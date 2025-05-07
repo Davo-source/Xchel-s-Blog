@@ -7,6 +7,8 @@ import PostsDisplayer from "../../components/posts slicer displayer/posts-slicer
 import Paginator from "../../components/paginator/paginator";
 import {Skeleton} from "@mui/material"
 import "animate.css";
+import { Typography } from "@mui/material"
+
 const HomePage = () => {
   
   const [totalPosts, setTotalPosts] = useState([]);
@@ -52,7 +54,7 @@ const HomePage = () => {
   );
 
   return (
-    <div className="container g-0">
+    <div className="container">
 
         {totalPosts.length ===0 ? <Skeleton width="100%"
                                             children={<Carrousel/>}/> :
@@ -62,7 +64,27 @@ const HomePage = () => {
       </div>
 
       <div className="container posts mt-4 mt-md-5 p-2 p-lg-5">
-        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-5 g-0">
+        <Typography
+        variant="h4"
+        component="h1"
+        sx={{
+        fontFamily: '"Playfair Display", serif',
+        fontWeight: 'bold',
+        color: 'black',
+        mb: 2,
+        pb: 0.5,
+        letterSpacing: '0.5px',
+        }}>
+          Explore Topics
+        </Typography>
+        <Typography
+        component="p"
+        sx={{
+          mb: 6
+        }}>
+          Getting into the details of exicting topics
+        </Typography>
+        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-2 g-0">
             <PostsDisplayer postOnPage={postOnPage}/>
         </div>
       </div>
