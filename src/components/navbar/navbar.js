@@ -23,23 +23,23 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav navbarScroll>
-              <Nav.Link as={Link} to={`/posts`}>
-                Posts
-              </Nav.Link>
+              <div className="test1">
               <Nav.Link
                 as={Link}
-                className={`myButton-${classHide}`}
+                className={`btn-${classHide}`}
                 to={`/newArticle`}
+                role="button"
               >
-                Make a Post
+                New Post
               </Nav.Link>
+              </div>
               <Nav.Link
                 as={Link}
                 className={`btn-${classHide}`}
                 to={`/`}
                 onClick={handleClick}
               >
-                Logout
+                Log out
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

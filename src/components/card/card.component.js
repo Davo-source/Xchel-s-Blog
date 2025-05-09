@@ -18,7 +18,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
   return (
     <Fragment>
         <ModalDeleteDialog postId={postId}/>
-        <Card  sx={{ borderRadius: 7, maxHeight: "400px", height:"400px", background: "#ceead6"}}>
+        <Card  sx={{ borderRadius: 6, maxHeight: "400px", height:"380px", background: "#ceead6"}}>
             <div>
             <ThreeDotMenu login={login}
                                   postId={postId}/>
@@ -26,7 +26,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
             <CardActionArea sx={{ height: '100%'}}>
             <CardMedia
             component="img"
-            height="120"
+            height="130"
             image={image}
             alt="error image"
             />
@@ -49,8 +49,9 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
                         {new Date(createdAt).toLocaleDateString('en-US', options)}</Typography>
                     <Typography variant="body1" align="center"
                       sx={{
-                        color: 'text.secondary',
-                        lineHeight: 1.6
+                        color: 'text.primary',
+                        lineHeight: 1.6,
+                        fontWeight: "lighter"
                       }}
                     >
                         {desc}

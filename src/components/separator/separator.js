@@ -8,7 +8,7 @@ const Separator = () => {
         navigate("/xcheladmin");
     }
     return (
-        <div className="separador mt-5">
+        <div className="separador">
             <i onClick={()=> handleClick()}  className="far fa-list-alt"></i>
         </div>
     );

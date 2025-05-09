@@ -1,114 +1,81 @@
 .navbar {
   font-family:Arial, Helvetica, sans-serif;
   box-shadow: 0px 10px 14px -7px #0e180a69;
-  background-image: linear-gradient(to right, #0396FF , #ABDCFF);
 }
-
-.hide {
-  display: none !important;
-}
-.nav-link {
-  color: #000000e0 !important;
-  margin: 0 8px;
-  margin-top: 0%;
-}
-
-.searchIcon{
-  border: solid;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  position: absolute;
-  margin-left: 9rem;
-  transform: rotateY(180deg)
-}
-.fa-magnifying-glass{
-  color: black !important;
-}
-
 .link {
   text-decoration: none !important;
   color: #000000;
   margin-right: 2rem;
 }
-.myButton-navbar {
+/* From Uiverse.io by cssbuttons-io */ 
+.btn-navbar {
+  position: relative;
+  font-size: 15px !important;
+  text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 16px;
-  color: rgb(255, 254, 254) !important;
-  padding: 6px 20px;
-  text-decoration: none;
-  
+  transition: all 0.2s;
+  border: none;
+  border-radius: 2em;
+  font-family: inherit;
+  font-weight: 520 !important;
+  color: white !important;
+  background-color: rgb(255, 1, 1) !important;
 }
-.myButton-navbar:hover {
-  background: linear-gradient(to bottom, #54a770fb 5%, #198754 100%);
-  text-shadow: none;
+.test1{
+  margin-left: 50vw;
+  margin-right: 5px;
 }
-.myButton-navbar:active {
-  position: relative;
-  top: 1px;
-}
-.myButton-hide{
-  visibility: hidden;
-}
-.btn-navbar{
-  margin-left: 65vh;
-  width: 70px;
-	display:inline-block;
-	cursor:pointer;
-	font-size:16px;
-	padding:5px 20px;
-	text-decoration:none;
-  color: rgb(255, 254, 254) !important;
+.test2-hide{
+  border: none;
 }
 .btn-navbar:hover {
-  background: linear-gradient(to bottom, #54a770fb 5%, #198754 100%);
-  text-shadow: none;
-}
-.btn-hide{
-  visibility: hidden;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 992px) {
-  .searchIcon{
-    margin-left: 40rem;
-  }
-  .myButton-navbar {
-    color: inherit;
-    background-color: none;
-    background: none;
-    border: none;
-    box-shadow: none;
-  }
-  .myButton-navbar:hover {
-    background: none;
-  }
-  .myButton-hide{
+.btn-navbar:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-navbar::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-navbar::after {
+  background-color: #000000;
+}
+
+.btn-navbar:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+@media (max-width: 990px) {
+  .btn-hide{
     display: none;
     color: #ffffff;
   }
   .btn-navbar{
-    margin: 10px;
-    color: inherit;
-    background-color: none;
-    background: none;
-    border: none;
-    box-shadow: none;
+    color: black !important;
+    background-color: white !important;
+    border-radius: 0 !important;
+    width: 50vw !important;
   }
-  .btn-navbar:hover {
-    background-color: none;
-  }
-  .btn-hide{
-    display: none;
-    color: #ffffff;
-}
-}
-@media (max-width: 780px) and (min-width: 548px){
-  .searchIcon{
-    margin-left: 29rem;
+  .test1{
+    margin-left: 0;
   }
 }
-@media (max-width: 547px){
-  .searchIcon{
-    margin-left: 20rem;
-  }
+.btn-hide{
+  visibility: hidden;
 }

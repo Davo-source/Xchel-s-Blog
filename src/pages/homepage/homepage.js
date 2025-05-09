@@ -5,6 +5,7 @@ import Separator from "../../components/separator/separator";
 import Carrousel from "../../components/carrousel/carrousel";
 import PostsDisplayer from "../../components/posts slicer displayer/posts-slicer-displayer";
 import Paginator from "../../components/paginator/paginator";
+import HeroSection from "../../components/heroe/heroe.component";
 import {Skeleton} from "@mui/material"
 import "animate.css";
 import { Typography } from "@mui/material"
@@ -23,7 +24,7 @@ const HomePage = () => {
   const [isFirstRender, setIsFirstRender] = useState(true);
 
   // establece la cantidad de posts en cada paginacion
-  const postsPerPage = 6;
+  const postsPerPage = 9;
 
     useEffect(() => {
       if (isFirstRender) {
@@ -56,9 +57,10 @@ const HomePage = () => {
   return (
     <div className="container">
 
-        {totalPosts.length ===0 ? <Skeleton width="100%"
+        {/* {totalPosts.length ===0 ? <Skeleton width="100%"
                                             children={<Carrousel/>}/> :
-            <Carrousel totalPosts={totalPosts}/>  }
+            <Carrousel totalPosts={totalPosts}/>  } */}
+        <HeroSection></HeroSection>
       <div ref={separator}>
           <Separator/>
       </div>
@@ -74,6 +76,7 @@ const HomePage = () => {
         mb: 2,
         pb: 0.5,
         letterSpacing: '0.5px',
+        fontSize: "40px"
         }}>
           Explore Topics
         </Typography>
@@ -84,7 +87,7 @@ const HomePage = () => {
         }}>
           Getting into the details of exicting topics
         </Typography>
-        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-2 g-0">
+        <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-lg-3 g-0">
             <PostsDisplayer postOnPage={postOnPage}/>
         </div>
       </div>
