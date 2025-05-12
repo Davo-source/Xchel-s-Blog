@@ -5,10 +5,10 @@ import {ContextGlobal} from "../../Estados/Contexto";
 import "./navbar.styles.css";
 
 const NavBar = () => {
-  const [login, setlogin] = useContext(ContextGlobal);
-  let classHide = login ? "navbar" : "hide";
+  const { loginState, setLoginState } = useContext(ContextGlobal);
+  let classHide = loginState ? "navbar" : "hide";
   const handleClick = () => {
-    setlogin(false);
+    setLoginState(false);
   };
   return (
     <div>
@@ -16,8 +16,8 @@ const NavBar = () => {
         <Container>
           <Navbar.Brand>
             <Link className="link" to={`/`}>
-              <i className="fab fa-mixer fa-lg"/>
-              chel dev
+              <img src="/favicon.ico" alt="Favicon" style={{ width: '40px', height: '40px' }}/>
+              <span className="title-logo">chel dev</span>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

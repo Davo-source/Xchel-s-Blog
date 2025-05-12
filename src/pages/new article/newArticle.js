@@ -3,12 +3,15 @@ import "./newarticle.css";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {PreviewMarkdown} from "../../components/preview markdown/PreviewMarkdown";
+import { useContext } from "react";
+import { ContextGlobal } from "../../Estados/Contexto";
 
 const NewArticle = () => {
   const [title, setTitle] = useState();
   const [imageURL, setImageURL] = useState();
   const [description, setDescription] = useState();
   const [markDown, setMarkDown] = useState();
+  const { accessToken } = useContext(ContextGlobal);
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -19,6 +22,10 @@ const NewArticle = () => {
         imageURL,
         description,
         markDown,
+      },{
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        }
       });
       navigate(`/post/` + res.data._id);
     } catch (err) {

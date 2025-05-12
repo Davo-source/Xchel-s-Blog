@@ -1,10 +1,22 @@
 import React from "react"
 import axios from "axios";
+import { ContextGlobal } from "../../Estados/Contexto";
+import { useContext } from "react";
 
     const ModalDeleteDialog = ({postId}) => {
+        const { accessToken } = useContext(ContextGlobal);
+
         const handleDelete = async () => {
             try {
-                const res = await axios.delete("/posts/" + postId, {});
+                const res = await axios.delete(
+                    "/posts/" + postId,
+                    {}
+                    ,{
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`
+                        }
+                    }
+                );
                 window.location.replace("/");
                 console.log(res.data);
             } catch (err) {

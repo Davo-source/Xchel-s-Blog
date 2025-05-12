@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 
 const CardComponent = ({Id,title,desc,createdAt,image}) => {
   const [postId] = useState(Id);
-  const [login] = useContext(ContextGlobal);
+  const { loginState } = useContext(ContextGlobal);
   const options = {year: 'numeric', month: 'long', day: 'numeric'}
   let navigate = useNavigate();
     const handleClick = () => {
@@ -20,7 +20,7 @@ const CardComponent = ({Id,title,desc,createdAt,image}) => {
         <ModalDeleteDialog postId={postId}/>
         <Card  sx={{ borderRadius: 6, maxHeight: "400px", height:"380px", background: "#ceead6"}}>
             <div>
-            <ThreeDotMenu login={login}
+            <ThreeDotMenu login={loginState}
                                   postId={postId}/>
             </div>
             <CardActionArea sx={{ height: '100%'}}>

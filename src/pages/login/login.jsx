@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const [login, setLogin] = useContext(ContextGlobal);
+  const { setLoginState, setAccessToken } = useContext(ContextGlobal);
 
 
   useEffect( () => {
@@ -30,7 +30,8 @@ const Login = () => {
           password: password,
 
       });
-      setLogin(true);
+      setAccessToken(res.data.accessToken);
+      setLoginState(true);
     }
 
     catch(err){

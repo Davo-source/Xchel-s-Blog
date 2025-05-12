@@ -12,14 +12,14 @@ import ErrorPage from "./pages/error page/error-page";
 import {Layout} from "./components/layout/layout";
 
 function App() {
-  const [login] = useContext(ContextGlobal);
+  const { loginState } = useContext(ContextGlobal);
 
   return (
     <BrowserRouter>
         <Routes>
             <Route
                 path={`/xcheladmin`}
-                element={login ? <Navigate to="/" replace /> : <Login />}
+                element={loginState ? <Navigate to="/" replace /> : <Login />}
             />
             <Route path="/errorPage" element={<ErrorPage/>} />
             <Route path="*" element={<Navigate to="/errorPage" replace />} />
@@ -27,11 +27,11 @@ function App() {
                 <Route index element={<HomePage />} />
                 <Route
                     path={`newArticle`}
-                    element={login ? <NewArticle /> : <HomePage />}
+                    element={loginState ? <NewArticle /> : <HomePage />}
                 />
                 <Route
                     path={`editArticle/:id`}
-                    element={login ? <EditArticle /> : <HomePage />}
+                    element={loginState ? <EditArticle /> : <HomePage />}
                 />
                 <Route path={`posts`} element={<HomePage />} />
                 <Route path={`post/:id`} element={<Post />} />

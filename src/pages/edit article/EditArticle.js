@@ -4,13 +4,16 @@ import "./EditArticle.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { PreviewMarkdown } from "../../components/preview markdown/PreviewMarkdown.js";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ContextGlobal } from "../../Estados/Contexto.js";
 
 const EditArticle = () => {
   const [title, setTitle] = useState(" ");
   const [imageURL, setImageURL] = useState("");
   const [description, setDescription] = useState("");
   const [markDown, setMarkDown] = useState("");
+  const { accessToken } = useContext(ContextGlobal);
 
   let urlpre = window.location.pathname;
   let url = urlpre.split("/");
@@ -43,7 +46,15 @@ const EditArticle = () => {
     //codigo axios put
     try {
       await axios
-        .put(`/posts/${postId}`, update)
+        .put(
+          `/posts/${postId}`, 
+          update,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`
+            }
+          }
+        )
       navigate(`/post/${postId}`, {replace: true})
     }
      catch (err) {

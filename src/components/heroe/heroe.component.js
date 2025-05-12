@@ -32,7 +32,6 @@ function HeroSection() {
        alignItems: 'center',
        justifyContent: 'center',
        minHeight: '60vh',
-       bgcolor: 'background.default',
        gap: 4
       }}>
      <Box
@@ -61,7 +60,6 @@ function HeroSection() {
 
      <Box
        sx={{
-         flex: 1,
          display: 'flex',
          flex: { md: '0 0 40%' },
          justifyContent: 'center',

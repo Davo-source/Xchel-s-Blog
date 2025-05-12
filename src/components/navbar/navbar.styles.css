@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&family=The+Nautigal&display=swap");
+.title-logo {
+  font-family: "The Nautigal", cursive;
+  font-size:xx-large;
+  font-weight: bold;
+}
+.title-logo:hover {
+  color: red;
+}
 .navbar {
   font-family:Arial, Helvetica, sans-serif;
   box-shadow: 0px 10px 14px -7px #0e180a69;
+  background: linear-gradient(to right, white 70%, rgba(17, 0, 128, 0.464) 110%);
 }
 .link {
   text-decoration: none !important;
