@@ -24,7 +24,7 @@ axios.interceptors.response.use(
  },
  async (ResponseError) => {
   if (ResponseError.response?.status === 403 
-    && ResponseError.response.data.credentials !== "caducated"){
+    && ResponseError.response.data?.credentials !== "caducated"){
    try{
 
     const newAccessToken = await axios.post('/auth/refresh', {});

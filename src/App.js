@@ -1,5 +1,6 @@
+import axios from "axios";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import "./App.css";
 import HomePage from "./pages/homepage/homepage";
 import Login from "./pages/login/login";
@@ -12,7 +13,21 @@ import ErrorPage from "./pages/error page/error-page";
 import {Layout} from "./components/layout/layout";
 
 function App() {
-  const { loginState } = useContext(ContextGlobal);
+  const { loginState, setLoginState, setAccessToken } = useContext(ContextGlobal);
+
+  //TODO: A GET REQUEST TO CHECK AND VERIFY IF REFRESH TOKEN HASN'T EXPIRED, IF IT HASN'T THEN REFRESH ACCESS TOKEN
+  useEffect(() => {
+   const setAccessAndLoginStateFromCookie = async () => {
+     try{
+      const resp = await axios.post('/auth/refresh', {});
+      setAccessToken(resp.data);
+      setLoginState(true);
+     } catch(err){
+      console.log(err)
+     }
+   };
+   setAccessAndLoginStateFromCookie();
+  }, []);
 
   return (
     <BrowserRouter>
