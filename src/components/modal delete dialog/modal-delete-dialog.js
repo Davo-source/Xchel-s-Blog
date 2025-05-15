@@ -10,13 +10,11 @@ import { useContext } from "react";
             try {
                 const res = await axios.delete(
                     "/posts/" + postId,
-                    {}
-                    ,{
-                        headers: {
-                            Authorization: `Bearer ${accessToken}`
-                        }
-                    }
-                );
+                    {
+                       headers: {
+                           Authorization: `Bearer ${accessToken}`
+                       }
+                    });
                 window.location.replace("/");
                 console.log(res.data);
             } catch (err) {
